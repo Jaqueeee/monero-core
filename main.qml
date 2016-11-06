@@ -404,9 +404,9 @@ ApplicationWindow {
             transactionConfirmationPopup.text  = qsTr("Please confirm transaction:\n")
                         + qsTr("\nAddress: ") + address
                         + qsTr("\nPayment ID: ") + paymentId
-                        + qsTr("\n\nAmount: ") + walletManager.displayAmount(transaction.amount)
+                        + qsTr("\nAmount: ") + walletManager.displayAmount(transaction.amount)
                         + qsTr("\nFee: ") + walletManager.displayAmount(transaction.fee)
-                        + qsTr("\n\nMixin: ") + mixinCount
+                        + qsTr("\nMixin: ") + mixinCount
                         + translationManager.emptyString
             transactionConfirmationPopup.icon = StandardIcon.Question
             transactionConfirmationPopup.open()
@@ -443,7 +443,7 @@ ApplicationWindow {
     function showProcessingSplash(message) {
         console.log("Displaying processing splash")
         if (typeof message != 'undefined') {
-            splash.message = message
+            splash.messageText = message
         }
         splash.show()
     }
@@ -516,11 +516,12 @@ ApplicationWindow {
     // TODO: replace with customized popups
 
     // Information dialog
-    MessageDialog {
+    StandardDialog {
         // dynamically change onclose handler
         property var onCloseCallback
         id: informationPopup
-        standardButtons: StandardButton.Ok
+       // standardButtons: StandardButton.Ok
+        cancelVisible: false
         onAccepted:  {
             if (onCloseCallback) {
                 onCloseCallback()
@@ -529,10 +530,11 @@ ApplicationWindow {
     }
 
     // Confrirmation aka question dialog
-    MessageDialog {
+    StandardDialog {
         id: transactionConfirmationPopup
-        standardButtons: StandardButton.Ok  + StandardButton.Cancel
+        //standardButtons: StandardButton.Ok  + StandardButton.Cancel
         onAccepted: {
+            close();
             handleTransactionConfirmed()
         }
     }
