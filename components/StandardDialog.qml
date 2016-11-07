@@ -109,8 +109,9 @@ Window {
                 text: qsTr("Ok")
                 KeyNavigation.tab: cancelButton
                 onClicked: {
-                    root.accepted()
                     root.close()
+                    root.accepted()
+
                 }
             }
 
@@ -124,8 +125,8 @@ Window {
                 pressedColor: "#FF4304"
                 text: qsTr("Cancel")
                 onClicked: {
-                    root.rejected()
                     root.close()
+                    root.rejected()
                 }
             }
         }
