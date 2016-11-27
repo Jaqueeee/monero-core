@@ -132,6 +132,7 @@ int main(int argc, char *argv[])
         accountName = "My monero Account";
     }
 
+    engine.rootContext()->setContextProperty("nativeFolderSeparator", QDir::separator());
     engine.rootContext()->setContextProperty("defaultAccountName", accountName);
     engine.rootContext()->setContextProperty("applicationDirectory", QApplication::applicationDirPath());
     engine.load(QUrl(QStringLiteral("qrc:///main.qml")));

@@ -134,11 +134,11 @@ Rectangle {
     function createWalletPath(folder_path,account_name){
 
         // Remove trailing slash - (default on windows and mac)
-        if (folder_path.substring(folder_path.length -1) === "/"){
+        if (folder_path.substring(folder_path.length -1) === nativeFolderSeparator){
             folder_path = folder_path.substring(0,folder_path.length -1)
         }
 
-        return folder_path + "/" + account_name + "/" + account_name
+        return folder_path + nativeFolderSeparator + account_name + nativeFolderSeparator + account_name
     }
 
     function walletExists(path){
