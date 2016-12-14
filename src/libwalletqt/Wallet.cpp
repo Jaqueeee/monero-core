@@ -457,5 +457,7 @@ Wallet::~Wallet()
 {
     qDebug("~Wallet: Closing wallet");
     delete m_history;
+    qDebug("~Wallet: deleted history - calling closeWallet");
     Monero::WalletManagerFactory::getWalletManager()->closeWallet(m_walletImpl);
+    qDebug("~Wallet: end");
 }

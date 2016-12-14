@@ -608,6 +608,7 @@ ApplicationWindow {
 
     // close wallet and show wizard
     function showWizard(){
+        console.log("show wizard clicked");
         walletInitialized = false;
         splashCounter = 0;
         walletManager.closeWalletAsync();

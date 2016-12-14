@@ -87,9 +87,11 @@ Wallet *WalletManager::recoveryWallet(const QString &path, const QString &memo, 
 
 QString WalletManager::closeWallet()
 {
+    qDebug(__FUNCTION__);
     QMutexLocker locker(&m_mutex);
     QString result;
     if (m_currentWallet) {
+        qDebug() << "CloseWallet() - wallet exists, closing wallet called";
         result = m_currentWallet->address();
         delete m_currentWallet;
     } else {
@@ -101,6 +103,7 @@ QString WalletManager::closeWallet()
 
 void WalletManager::closeWalletAsync()
 {
+    qDebug(__FUNCTION__);
     QFuture<QString> future = QtConcurrent::run(this, &WalletManager::closeWallet);
     QFutureWatcher<QString> * watcher = new QFutureWatcher<QString>();
     watcher->setFuture(future);
