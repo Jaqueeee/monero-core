@@ -248,13 +248,13 @@ void Wallet::createTransactionAsync(const QString &dst_addr, const QString &paym
     QFuture<PendingTransaction*> future = QtConcurrent::run(this, &Wallet::createTransaction,
                                   dst_addr, payment_id,amount, mixin_count, priority);
     QFutureWatcher<PendingTransaction*> * watcher = new QFutureWatcher<PendingTransaction*>();
-    watcher->setFuture(future);
     connect(watcher, &QFutureWatcher<PendingTransaction*>::finished,
             this, [this, watcher,dst_addr,payment_id,mixin_count]() {
         QFuture<PendingTransaction*> future = watcher->future();
         watcher->deleteLater();
         emit transactionCreated(future.result(),dst_addr,payment_id,mixin_count);
     });
+    watcher->setFuture(future);
 }
 
 PendingTransaction *Wallet::createTransactionAll(const QString &dst_addr, const QString &payment_id,
@@ -274,13 +274,13 @@ void Wallet::createTransactionAllAsync(const QString &dst_addr, const QString &p
     QFuture<PendingTransaction*> future = QtConcurrent::run(this, &Wallet::createTransactionAll,
                                   dst_addr, payment_id, mixin_count, priority);
     QFutureWatcher<PendingTransaction*> * watcher = new QFutureWatcher<PendingTransaction*>();
-    watcher->setFuture(future);
     connect(watcher, &QFutureWatcher<PendingTransaction*>::finished,
             this, [this, watcher,dst_addr,payment_id,mixin_count]() {
         QFuture<PendingTransaction*> future = watcher->future();
         watcher->deleteLater();
         emit transactionCreated(future.result(),dst_addr,payment_id,mixin_count);
     });
+    watcher->setFuture(future);
 }
 
 PendingTransaction *Wallet::createSweepUnmixableTransaction()
@@ -294,13 +294,13 @@ void Wallet::createSweepUnmixableTransactionAsync()
 {
     QFuture<PendingTransaction*> future = QtConcurrent::run(this, &Wallet::createSweepUnmixableTransaction);
     QFutureWatcher<PendingTransaction*> * watcher = new QFutureWatcher<PendingTransaction*>();
-    watcher->setFuture(future);
     connect(watcher, &QFutureWatcher<PendingTransaction*>::finished,
             this, [this, watcher]() {
         QFuture<PendingTransaction*> future = watcher->future();
         watcher->deleteLater();
         emit transactionCreated(future.result(),"","",0);
     });
+    watcher->setFuture(future);
 }
 
 void Wallet::disposeTransaction(PendingTransaction *t)
