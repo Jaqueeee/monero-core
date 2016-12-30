@@ -91,7 +91,7 @@ win32 {
         MSYS_PATH=c:/msys32/mingw32
 
         # boost root path
-        BOOST_PATH=/c/Qt/Qt5.7.0/Tools/mingw530_32/boost
+        BOOST_PATH=c:/msys32/mingw32/boost
 
     }
 
@@ -130,7 +130,8 @@ win32 {
 
 linux {
     CONFIG(static) {
-        LIBS+= -Wl,-Bstatic
+        message("using static libraries")
+        LIBS+= -Wl,-Bstatic    
     }
     LIBS+= \
         -lboost_serialization \
@@ -153,9 +154,19 @@ linux {
         message(Building with libunwind)
         LIBS += -Wl,-Bdynamic -lunwind
     }
+    
+
+    QMAKE_LFLAGS_RPATH=
+    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN/libs\'"
+    
 }
 
 macx {
+    # mixing static and shared libs are not supported on mac
+    # CONFIG(static) {
+    #     message("using static libraries")
+    #     LIBS+= -Wl,-Bstatic
+    # }
     LIBS+= \
         -L/usr/local/lib \
         -L/usr/local/opt/openssl/lib \
@@ -261,6 +272,10 @@ win32 {
     contains(QMAKE_HOST.arch, x86_64) {
         deploy.commands += $$escape_expand(\n\t) $$PWD/windeploy_helper.sh $$DESTDIR
     }
+}
+
+linux {
+    deploy.commands += $$escape_expand(\n\t) $$PWD/linuxdeploy_helper.sh $$DESTDIR $$TARGET
 }
 
 

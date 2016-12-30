@@ -31,6 +31,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Layouts 1.1
 import QtQuick.Dialogs 1.2
+import "../version.js" as Version
 
 
 import "../components"
@@ -298,7 +299,7 @@ Rectangle {
                 releasedColor: "#FF6C3C"
                 pressedColor: "#FF4304"
                 onClicked: {
-                    appWindow.startDaemon()
+                    appWindow.startDaemon(daemonFlags.text)
                 }
             }
 
@@ -335,6 +336,23 @@ Rectangle {
         }
 
         RowLayout {
+            id: daemonFlagsRow
+            Label {
+                id: daemonFlagsLabel
+                color: "#4A4949"
+                text: qsTr("Daemon startup flags") + translationManager.emptyString
+                fontSize: 16
+            }
+            LineEdit {
+                id: daemonFlags
+                Layout.preferredWidth:  200
+                Layout.fillWidth: true
+                text: appWindow.persistentSettings.daemonFlags;
+                placeholderText: qsTr("(optional)") + translationManager.emptyString
+            }
+        }
+
+        RowLayout {
             CheckBox {
                 id: customDecorationsCheckBox
                 checked: persistentSettings.customDecorations
@@ -343,6 +361,21 @@ Rectangle {
                 checkedIcon: "../images/checkedVioletIcon.png"
                 uncheckedIcon: "../images/uncheckedIcon.png"
             }
+        }
+
+        Label {
+            id: guiVersion
+            Layout.topMargin: 8
+            color: "#4A4949"
+            text: qsTr("GUI version: ") + Version.GUI_VERSION + translationManager.emptyString
+            fontSize: 16
+        }
+
+        Label {
+            id: guiMoneroVersion
+            color: "#4A4949"
+            text: qsTr("Embedded Monero version: ") + Version.GUI_MONERO_VERSION + translationManager.emptyString
+            fontSize: 16
         }
 
     }
