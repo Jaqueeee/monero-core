@@ -484,6 +484,11 @@ bool Wallet::verifySignedMessage(const QString &message, const QString &address,
   }
 }
 
+bool Wallet::rescanSpent()
+{
+    return m_walletImpl->rescanSpent();
+}
+
 Wallet::Wallet(Monero::Wallet *w, QObject *parent)
     : QObject(parent)
     , m_walletImpl(w)
