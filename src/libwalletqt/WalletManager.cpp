@@ -49,7 +49,8 @@ Wallet *WalletManager::openWallet(const QString &path, const QString &password, 
 
     Monero::Wallet * w =  m_pimpl->openWallet(path.toStdString(), password.toStdString(), testnet);
     qDebug("%s: opened wallet: %s, status: %d", __PRETTY_FUNCTION__, w->address().c_str(), w->status());
-    m_currentWallet  = new Wallet(w);
+    WalletManager * wm = const_cast<WalletManager*>(this);
+    m_currentWallet  = new Wallet(w,wm);
 
     // move wallet to the GUI thread. Otherwise it wont be emitting signals
     if (m_currentWallet->thread() != qApp->thread()) {
@@ -61,16 +62,20 @@ Wallet *WalletManager::openWallet(const QString &path, const QString &password, 
 
 void WalletManager::openWalletAsync(const QString &path, const QString &password, bool testnet)
 {
-    QFuture<Wallet*> future = QtConcurrent::run(this, &WalletManager::openWallet,
-                                        path, password, testnet);
-    QFutureWatcher<Wallet*> * watcher = new QFutureWatcher<Wallet*>();
-    watcher->setFuture(future);
-    connect(watcher, &QFutureWatcher<Wallet*>::finished,
-            this, [this, watcher]() {
-        QFuture<Wallet*> future = watcher->future();
-        watcher->deleteLater();
-        emit walletOpened(future.result());
-    });
+
+        openWallet(path,password,testnet);
+        emit walletOpened(m_currentWallet);
+//    QFuture<Wallet*> future = QtConcurrent::run(this, &WalletManager::openWallet,
+//                                        path, password, testnet);
+//    QFutureWatcher<Wallet*> * watcher = new QFutureWatcher<Wallet*>();
+
+//    connect(watcher, &QFutureWatcher<Wallet*>::finished,
+//            this, [this, watcher]() {
+//        QFuture<Wallet*> future = watcher->future();
+//        watcher->deleteLater();
+//        emit walletOpened(future.result());
+//    });
+//    watcher->setFuture(future);
 }
 
 
@@ -119,9 +124,11 @@ QString WalletManager::closeWallet()
 
 void WalletManager::closeWalletAsync()
 {
+
+    emit walletClosed(closeWallet());
     QFuture<QString> future = QtConcurrent::run(this, &WalletManager::closeWallet);
     QFutureWatcher<QString> * watcher = new QFutureWatcher<QString>();
-    watcher->setFuture(future);
+
 
     connect(watcher, &QFutureWatcher<QString>::finished,
             this, [this, watcher]() {
@@ -129,6 +136,7 @@ void WalletManager::closeWalletAsync()
        watcher->deleteLater();
        emit walletClosed(future.result());
     });
+    watcher->setFuture(future);
 }
 
 bool WalletManager::walletExists(const QString &path) const

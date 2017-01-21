@@ -58,7 +58,7 @@ ApplicationWindow {
     property bool isNewWallet: false
     property int restoreHeight:0
     property bool daemonSynced: false
-    property int maxWindowHeight: (Screen.height < 900)? 720 : 800;
+    property int maxWindowHeight: 1499 // (Screen.height < 900)? 720 : 800;
     property bool daemonRunning: false
     property alias toolTip: toolTip
     property string walletName
@@ -338,9 +338,9 @@ ApplicationWindow {
         middlePanel.updateStatus();
 
         // If wallet isnt connected and no daemon is running - Ask
-        if(currentWallet.connected === Wallet.ConnectionStatus_Disconnected && !daemonManager.running() && !walletInitialized){
-            daemonManagerDialog.open();
-        }
+//        if(currentWallet.connected === Wallet.ConnectionStatus_Disconnected && !daemonManager.running() && !walletInitialized){
+//            daemonManagerDialog.open();
+//        }
 
         // Refresh is succesfull if blockchain height > 1
         if (currentWallet.blockChainHeight() > 1){
@@ -697,7 +697,7 @@ ApplicationWindow {
             splash.messageText = message
             splash.heightProgressText = ""
         }
-        splash.show()
+        //splash.show()
     }
 
     function hideProcessingSplash() {
@@ -718,7 +718,7 @@ ApplicationWindow {
     objectName: "appWindow"
     visible: true
     width: rightPanelExpanded ? 1269 : 1269 - 300
-    height: maxWindowHeight;
+    height: 1400//maxWindowHeight;
     color: "#FFFFFF"
     flags: persistentSettings.customDecorations ? (Qt.FramelessWindowHint | Qt.WindowSystemMenuHint | Qt.Window | Qt.WindowMinimizeButtonHint) : (Qt.WindowSystemMenuHint | Qt.Window | Qt.WindowMinimizeButtonHint | Qt.WindowCloseButtonHint | Qt.WindowTitleHint | Qt.WindowMaximizeButtonHint)
     onWidthChanged: x -= 0
@@ -742,14 +742,14 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        x = (Screen.width - width) / 2
-        y = (Screen.height - maxWindowHeight) / 2
+//        x = (Screen.width - width) / 2
+//        y = (Screen.height - maxWindowHeight) / 2
         //
         walletManager.walletOpened.connect(onWalletOpened);
         walletManager.walletClosed.connect(onWalletClosed);
 
-        daemonManager.daemonStarted.connect(onDaemonStarted);
-        daemonManager.daemonStopped.connect(onDaemonStopped);
+//        daemonManager.daemonStarted.connect(onDaemonStarted);
+//        daemonManager.daemonStopped.connect(onDaemonStopped);
 
         if(!walletsFound()) {
             rootItem.state = "wizard"
@@ -888,13 +888,13 @@ ApplicationWindow {
                 PropertyChanges { target: leftPanel; visible: false }
                 PropertyChanges { target: rightPanel; visible: false }
                 PropertyChanges { target: middlePanel; visible: false }
-                PropertyChanges { target: titleBar; basicButtonVisible: false }
+                PropertyChanges { target: titleBar; basicButtonVisible: true }
                 PropertyChanges { target: wizard; visible: true }
-                PropertyChanges { target: appWindow; width: 930; }
+                PropertyChanges { target: appWindow; width: 400; }
                 PropertyChanges { target: appWindow; height: 595; }
-                PropertyChanges { target: resizeArea; visible: false }
+                PropertyChanges { target: resizeArea; visible: true }
                 PropertyChanges { target: titleBar; maximizeButtonVisible: false }
-                PropertyChanges { target: frameArea; blocked: true }
+                PropertyChanges { target: frameArea; blocked: false }
                 PropertyChanges { target: titleBar; visible: false }
                 PropertyChanges { target: titleBar; y: 0 }
                 PropertyChanges { target: titleBar; title: qsTr("Program setup wizard") + translationManager.emptyString }
@@ -988,26 +988,26 @@ ApplicationWindow {
             PropertyAction {
                 target: frameArea
                 properties: "blocked"
-                value: true
+                value: false
             }
             PropertyAction {
                 target: resizeArea
                 properties: "visible"
-                value: false
+                value: true
             }
             NumberAnimation {
                 target: appWindow
                 properties: "height"
-                to: 30
+                to: 1499
                 easing.type: Easing.InCubic
-                duration: 200
+                duration: 1
             }
             NumberAnimation {
                 target: appWindow
                 properties: "width"
-                to: 470
+                to: (Screen.width < 470)? Screen.width : 470
                 easing.type: Easing.InCubic
-                duration: 200
+                duration: 1
             }
             PropertyAction {
                 targets: [leftPanel, rightPanel]
@@ -1093,8 +1093,8 @@ ApplicationWindow {
             }
         }
 
-        property int maxWidth: leftPanel.width + 655 + rightPanel.width
-        property int minHeight: 720
+        property int minWidth: 320 //leftPanel.width + 655 + rightPanel.width
+        property int minHeight: 1620
         MouseArea {
             id: resizeArea
             hoverEnabled: true
@@ -1127,9 +1127,9 @@ ApplicationWindow {
                 var dx = previousPosition.x - pos.x
                 var dy = previousPosition.y - pos.y
 
-                if(appWindow.width - dx > parent.maxWidth)
+                if(appWindow.width - dx > parent.minWidth)
                     appWindow.width -= dx
-                else appWindow.width = parent.maxWidth
+                else appWindow.width = parent.minWidth
 
                 if(appWindow.height - dy > parent.minHeight)
                     appWindow.height -= dy
@@ -1210,6 +1210,6 @@ ApplicationWindow {
         // Close wallet non async on exit
         walletManager.closeWallet();
         // Stop daemon and pool miner
-        daemonManager.stop();
+//        daemonManager.stop();
     }
 }

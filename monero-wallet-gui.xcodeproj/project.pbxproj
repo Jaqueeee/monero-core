@@ -1,0 +1,1399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		74908BDE8DE808A779B912E1 /* Qt Preprocess */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "monero-wallet-gui" */;
+			buildPhases = (
+				5E618435888B9D49F8540165 /* Qt Qmake */,
+				7EF0942E79C014DCEC8976BC /* Qt Preprocessors */,
+			);
+			dependencies = (
+			);
+			name = "Qt Preprocess";
+			productName = "Qt Preprocess";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		032888628708CBBD56107ED4 /* Qt5XmlPatterns in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 3E4C30779F9A0B753D8C75A9 /* Qt5XmlPatterns */; };
+		04F20368AC5F8EF813CE5BC9 /* qmldbg_debugger in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 298653A8BB98083E366425B6 /* qmldbg_debugger */; };
+		051F0AFD38C35E83D1D943C5 /* TransactionInfo.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 263BD0FC07875F5DD3DAE62B /* TransactionInfo.cpp */; settings = {ATTRIBUTES = (); }; };
+		073C658B3B75DD3B0FF18FC2 /* qdds in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7336C445F639D78D2E70B902 /* qdds */; };
+		094020B06042190DAE719ECC /* qicns in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2FE240C2DD588E65DBE77825 /* qicns */; };
+		0A9398E5F8D3D8E917F46C41 /* qmldbg_tcp in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 9B0DEF37C8CBA530ECF0B008 /* qmldbg_tcp */; };
+		0CD4459BA537F8CA541E2A8A /* oscursor.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = CC8F9CC5AB8DE3A189E69E9D /* oscursor.cpp */; settings = {ATTRIBUTES = (); }; };
+		0CE02722F00CAD43741297B5 /* CoreGraphics.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 6AE3EC31EE5BB1FCEE84137C /* CoreGraphics.framework */; };
+		0CE1DA8EE95C20517C687AA1 /* moc_Transfer.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 0E2872E16E28C11373E70AFB /* moc_Transfer.cpp */; settings = {ATTRIBUTES = (); }; };
+		0CE81C2714A2BE7EF56B8155 /* moc_AddressBookModel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = EC7523C1A976490578D806ED /* moc_AddressBookModel.cpp */; settings = {ATTRIBUTES = (); }; };
+		0FB8F91522096D66DF0FA474 /* UnsignedTransaction.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 2A7765762FCD6118E6A5B7AA /* UnsignedTransaction.cpp */; settings = {ATTRIBUTES = (); }; };
+		0FD860FD7B6F15B661A3417B /* qmldbg_local in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E324742F28B72A9F6F01C6D3 /* qmldbg_local */; };
+		12E5705CED2906D8FB1F6717 /* qmacjp2 in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 31D27FC19F7EC881DC7C356E /* qmacjp2 */; };
+		1451F018B44043E5DEF2B7FA /* QRCodeImageProvider.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = A6FEA5A9A1F13E1A57067F84 /* QRCodeImageProvider.cpp */; settings = {ATTRIBUTES = (); }; };
+		15364689D2AB5A30E87A689F /* Security.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 205259EEEE2BADA5E64741E3 /* Security.framework */; };
+		18C7CB26C7296FDC5D0F29BB /* qmldbg_quickprofiler in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 8A130B3A7E935C57501FCECB /* qmldbg_quickprofiler */; };
+		1B49763087C443C2E057A282 /* moc_oshelper.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 1C9296DCAE0F5D36FFB12D4D /* moc_oshelper.cpp */; settings = {ATTRIBUTES = (); }; };
+		1DEA01A41A4A461CFBDC44C3 /* crypto in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 4A0A3CADEE19DC879A664205 /* crypto */; };
+		1EF97B4A06E385FB9327BF81 /* qico in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E5F22C1FA13C41736B0FEC44 /* qico */; };
+		2172DE0D948FC0B19925F1DD /* Qt5Quick in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 3F037E4C6BD9BF712BABC51A /* Qt5Quick */; };
+		2695715E6134421B2C880408 /* Qt5Network in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 197B22E8B64E1126F01073E1 /* Qt5Network */; };
+		274F2B3663C731220A90C8B1 /* qrc_qml.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 4FDE241A1593866A0DAEBF4D /* qrc_qml.cpp */; settings = {ATTRIBUTES = (); }; };
+		2A156534FC0B931C608A80CA /* qmlsettingsplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 615CACF721F6D5E7DD009BC3 /* qmlsettingsplugin */; };
+		2B02D9DC58A01E45248DDBCE /* CoreText.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7D7B02101166B76FD2D4F8B4 /* CoreText.framework */; };
+		2C14E178866CCD7EBF6F45EA /* clipboardAdapter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 934A86F63704851872CC8ED5 /* clipboardAdapter.cpp */; settings = {ATTRIBUTES = (); }; };
+		2F47366C0D65ADF014ADECC3 /* Qt5Gui in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = F7E24164F2FAF4E6F5540598 /* Qt5Gui */; };
+		30BC25FA396FDAA19D95B7A3 /* qtpcre in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 1CD5F4FCA45207308A47EBB1 /* qtpcre */; };
+		312536ACB83476DC95F29877 /* moc_WalletManager.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 431F55CC0BADDFBEAD13BB78 /* moc_WalletManager.cpp */; settings = {ATTRIBUTES = (); }; };
+		31C3036C188717381B47D939 /* qgenericbearer in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = B6CFB7F5922E3BDFE695651B /* qgenericbearer */; };
+		3309D7B719389B2B14B21501 /* qtquick2plugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 551AAAA1C4294282A40B1C6F /* qtquick2plugin */; };
+		3513F92BD5FF9C6BA8E61D3E /* moc_PendingTransaction.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 327EFAA82EE9F342ADC12ADD /* moc_PendingTransaction.cpp */; settings = {ATTRIBUTES = (); }; };
+		35A68FBC01FC4B2EEE1DEE09 /* widgetsplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7C61EF340DCEEC088E3DF502 /* widgetsplugin */; };
+		3A8AA8DAFF0D00F02C954954 /* WalletManager.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 8207F0232EDE54B45F2B24B9 /* WalletManager.cpp */; settings = {ATTRIBUTES = (); }; };
+		3B88F5282A94F6B412F8AE43 /* boost_serialization in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E4620670A71C7D0F76933FD5 /* boost_serialization */; };
+		401927458922522FCE1EA7BE /* boost_chrono in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = FD36620207F2FF8CAD464DD1 /* boost_chrono */; };
+		4087C223C19CBCF4AFF01622 /* moc_UnsignedTransaction.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = F849DF665A895835B015E61D /* moc_UnsignedTransaction.cpp */; settings = {ATTRIBUTES = (); }; };
+		43981C2D76CE6AF34C9DB5B8 /* qquicklayoutsplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 881EB2224F3820D4B71829C6 /* qquicklayoutsplugin */; };
+		439BD48EE03C077F9BA2A6C7 /* oshelper.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 70D89F7C83F0020615FA8DFF /* oshelper.cpp */; settings = {ATTRIBUTES = (); }; };
+		48D6F71FFF5FAD66805D8953 /* boost_regex in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 46948BABBDB240DB3DB0A924 /* boost_regex */; };
+		49A759B9C17076B070C87B03 /* wallet_merged in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 958A47AC565511A0B1759FAD /* wallet_merged */; };
+		4A5056C986373555BDAAF33A /* boost_filesystem in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 5D42263C6C8077409A65B29C /* boost_filesystem */; };
+		4B1B41A12C25D175A243B4C4 /* qmldbg_profiler in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7E9CCC3E74377D9D22D584A9 /* qmldbg_profiler */; };
+		4D0E36FEE67279F3845D063D /* AddressBookModel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = DD7384A72D5E15031B22B756 /* AddressBookModel.cpp */; settings = {ATTRIBUTES = (); }; };
+		4D3AF4F703124B43895167D7 /* qtgraphicaleffectsprivate in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = B4236B0EC04A21726CC912D0 /* qtgraphicaleffectsprivate */; };
+		4EB68D0C8182BCE33529C421 /* AudioToolbox.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 3C44131FDCFEF4396B9EA2BA /* AudioToolbox.framework */; };
+		4F6CD5283B392B8C1D0A2900 /* Qt5Widgets in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E994C4733C03A95877F85F12 /* Qt5Widgets */; };
+		508E35F0D4FCB4AD94798F46 /* windowplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 28D466768E1D8C1DF2449B31 /* windowplugin */; };
+		55EBBFE49741C381A3E348FF /* TranslationManager.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = ACCEE5A6E625267AD06A3AD4 /* TranslationManager.cpp */; settings = {ATTRIBUTES = (); }; };
+		594980245EE5B56E9866F59C /* boost_system in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = AB15978ED2C6374EAD31A759 /* boost_system */; };
+		597F28703E5B1C7BC2DD75AB /* moc_AddressBook.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = FCB575C43D9B0452DECC683E /* moc_AddressBook.cpp */; settings = {ATTRIBUTES = (); }; };
+		5A03ED4DFC7581E320E3C272 /* boost_thread in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = BBB3013D1EF3C661CE5F6E0B /* boost_thread */; };
+		5A9D936A2263443954DF3645 /* Default-568h@2x.png in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = C67DF3C3767E06C387E6CA97 /* Default-568h@2x.png */; };
+		5AD861734E9DC697385F90F1 /* moc_oscursor.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 60F409495FDCF4FAC4DDE545 /* moc_oscursor.cpp */; settings = {ATTRIBUTES = (); }; };
+		61EEC397DC8556BF8C4E36A7 /* ImageIO.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 3A8EF9C62A8D4790CBB89CEA /* ImageIO.framework */; };
+		63F61DD134D2605D296DB395 /* qtgraphicaleffectsplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2E2085C3BCB01250351AE5E4 /* qtgraphicaleffectsplugin */; };
+		67215E0F652A178B7E2E9D4B /* boost_date_time in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 0283515F94EA87DC28A2FEA6 /* boost_date_time */; };
+		691B6070012561E21E96DD50 /* qtfreetype in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 476A2E225BC7873CCEF4DBE1 /* qtfreetype */; };
+		6B36762CA7D04E6A31BFC5EE /* QrCode.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = C6FDD264EB4959CB2E570B4B /* QrCode.cpp */; settings = {ATTRIBUTES = (); }; };
+		70C3DD51D4BD7C2DA82661FC /* TransactionHistorySortFilterModel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = FC6E03FA91F42294C637DC08 /* TransactionHistorySortFilterModel.cpp */; settings = {ATTRIBUTES = (); }; };
+		70F80AD8652CE9C83667A036 /* Qt5Qml in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = B48E0C248CDBAAE9A1178633 /* Qt5Qml */; };
+		70FA55D1DF68B08FC95D2167 /* TransactionHistoryModel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 184E5EF20011C4E78619B00C /* TransactionHistoryModel.cpp */; settings = {ATTRIBUTES = (); }; };
+		717AC5AD92D1A362B43B6652 /* qmlxmllistmodelplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7F7923A84F4733DA01566DBD /* qmlxmllistmodelplugin */; };
+		78173D6D299C22B88A10BFBB /* AddressBook.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 12F1B7847728F25057B7CAFE /* AddressBook.cpp */; settings = {ATTRIBUTES = (); }; };
+		812A4F34DD47D7079603818D /* softwarecontext in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 17A0BACADF77ED10D576A9DA /* softwarecontext */; };
+		8258E9E5C2403D59CEEF89F1 /* PendingTransaction.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = EAEEEFC8824DAB7748B96B23 /* PendingTransaction.cpp */; settings = {ATTRIBUTES = (); }; };
+		8997ABB0BB0CC2D60805B7D3 /* moc_clipboardAdapter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 39A83F57EB5B767D9952247B /* moc_clipboardAdapter.cpp */; settings = {ATTRIBUTES = (); }; };
+		8BF95C329B3BA78F803DD2D9 /* monero-wallet-gui_plugin_import.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = F26307D641BC6138F02B8AED /* monero-wallet-gui_plugin_import.cpp */; settings = {ATTRIBUTES = (); }; };
+		9390C48ABFFC0F924F80D920 /* qtharfbuzzng in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = BA0DFDA05FD470B41B7205CA /* qtharfbuzzng */; };
+		9784B3920BD282699317BAE5 /* QrSegment.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 1DED310F0BFCD02CFA85869D /* QrSegment.cpp */; settings = {ATTRIBUTES = (); }; };
+		98B71C5C1EB6E64B1FDE239D /* TransactionHistory.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 38AC99B08E999B14E1A1CB04 /* TransactionHistory.cpp */; settings = {ATTRIBUTES = (); }; };
+		9DDB0094F1000CA478372FA6 /* dialogplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = F3A470E0AD45F7CD3BF9AC7F /* dialogplugin */; };
+		A75E90B0C978E8E46641F503 /* Wallet.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 961E4845434E6E5806515CEF /* Wallet.cpp */; settings = {ATTRIBUTES = (); }; };
+		A8C5C5DDEB39525FFDEE7B2D /* moc_TransactionHistorySortFilterModel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 527A7549AE5EF354FA1D8BF5 /* moc_TransactionHistorySortFilterModel.cpp */; settings = {ATTRIBUTES = (); }; };
+		AB6EAF027457F55990C85FA3 /* moc_TransactionHistoryModel.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 4D3AC63AF7C58A4C2A3BC5A9 /* moc_TransactionHistoryModel.cpp */; settings = {ATTRIBUTES = (); }; };
+		B152ACFAA0B535E600996876 /* moc_TransactionInfo.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 24CAF412FD0FB383EBEEA3E8 /* moc_TransactionInfo.cpp */; settings = {ATTRIBUTES = (); }; };
+		B1719F82FB1BF233B291435C /* Qt5Core in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 29DC9A2EBC48FA2F55440836 /* Qt5Core */; };
+		B37FFD0D44D88DE6F629C67C /* moc_TranslationManager.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 3D49A6EB3057997290BD8648 /* moc_TranslationManager.cpp */; settings = {ATTRIBUTES = (); }; };
+		B460F624007324313696BE86 /* QuartzCore.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7EC00404ACD5AB0E97726B0E /* QuartzCore.framework */; };
+		B6691DFC86E87766AE367995 /* ssl in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 04D2816A3C81AE7135D83054 /* ssl */; };
+		B995CCED8EB08A6B8BE2E837 /* zxcvbn.c in Compile Sources */ = {isa = PBXBuildFile; fileRef = 556B6DB9E700B1CA140794AF /* zxcvbn.c */; settings = {ATTRIBUTES = (); }; };
+		BDE2A11F44A139B482D5F657 /* filter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 948C258A783A953BD03C6D39 /* filter.cpp */; settings = {ATTRIBUTES = (); }; };
+		C44A426D2A370A2B560D33D5 /* moc_TransactionHistory.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 88C0AC9AA011FBC81AB87183 /* moc_TransactionHistory.cpp */; settings = {ATTRIBUTES = (); }; };
+		C4A234C701D88A47B5AC8AAA /* qmldbg_native in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = BFC8C0077FFB9ADC6DDE8D8B /* qmldbg_native */; };
+		C4FCE04A595FCB0FE7FAA2B4 /* qmldbg_server in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 6D672B5CE17ADC35677D1F5C /* qmldbg_server */; };
+		C68AD6B1DB4A9B5F81C57432 /* qtquickcontrolsplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 04FF821CC7623EFB82A212A0 /* qtquickcontrolsplugin */; };
+		C7947F292CEC798C5F10F53E /* moc_filter.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = C90550C531E5ACB67CAAEAA6 /* moc_filter.cpp */; settings = {ATTRIBUTES = (); }; };
+		CA277B8D2BFC8A7D99365D10 /* boost_program_options in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 69685672576F293A97938296 /* boost_program_options */; };
+		CD8144E0646089AB4E0BA2B1 /* qtga in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 0FC297AC2089E78B0EAEB2A5 /* qtga */; };
+		CEC3EF5EB3E14BDBF21F0B21 /* qios in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 79EAEF9C3E977162F5728DC1 /* qios */; };
+		D1BDE6C8453276776F2BFDA7 /* moc_Wallet.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 079A1D73E0A5FB3FF9DDA62F /* moc_Wallet.cpp */; settings = {ATTRIBUTES = (); }; };
+		D2FC380E0EC248795748962E /* qwebp in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 42E3BA0427E363A1EA450A79 /* qwebp */; };
+		D2FF25F144ADB461A4B07C91 /* main.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 9AC5B8B14A62BA6D8BC9F607 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		D4639595C3BCF2A39D88DF6E /* SystemConfiguration.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = FF5BDAB0076F3391B219EA52 /* SystemConfiguration.framework */; };
+		DA42238E653FDFE9225E38A5 /* LaunchScreen.xib in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 3BF1C02B8E9D8CACA844A230 /* LaunchScreen.xib */; };
+		DB85A611F2D899AA64605603 /* Qt5PacketProtocol in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 964BE964226590F93A6CBB5A /* Qt5PacketProtocol */; };
+		DF97E453832FFA16B4F35DA7 /* appicon.icns in Copy Bundle Resources */ = {isa = PBXBuildFile; fileRef = 137C79265FAA9E104EE558A1 /* appicon.icns */; settings = {ATTRIBUTES = (); }; };
+		E5032DA1754F41D1938F3365 /* qmldbg_inspector in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 9256C8481D55A8CB35847DC5 /* qmldbg_inspector */; };
+		E5089762D379AA4D75DA803A /* qtiff in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 07D85A9549FB431FE0FB30ED /* qtiff */; };
+		E5689907392681DCFD893534 /* qmlfolderlistmodelplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 5F87E18CC3557C107C50F217 /* qmlfolderlistmodelplugin */; };
+		EF95AF47DF5CA4F8CEFFFB55 /* Qt5PlatformSupport in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = E3FC1DB88D8300FC76B2FD4B /* Qt5PlatformSupport */; };
+		EFA8D05ACC23C5C3AB318F1A /* unbound in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 7C06043A9935680579285473 /* unbound */; };
+		F26454630C80841CBDCFE1CA /* Foundation.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = FCC237CA5AD60B9BA4447615 /* Foundation.framework */; };
+		F33813A5876AA45B2D116D81 /* BitBuffer.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 8026A3432315006599498C01 /* BitBuffer.cpp */; settings = {ATTRIBUTES = (); }; };
+		F48C8E856554EE5A139FE68B /* qwbmp in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 2D7654C0331241AE02EB9E08 /* qwbmp */; };
+		F52D345B95B13DB3D03A8EAD /* qtpng in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 1D198929D99E268355F30C9C /* qtpng */; };
+		F8B465CE34D8DF87AAE95913 /* CoreFoundation.framework in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = 4D765E1B1EA6C757220C63E7 /* CoreFoundation.framework */; };
+		FC530BF9C02D70917C6B84A3 /* monero-wallet-gui_qml_plugin_import.cpp in Compile Sources */ = {isa = PBXBuildFile; fileRef = 8312B2ABAE990FE768E46164 /* monero-wallet-gui_qml_plugin_import.cpp */; settings = {ATTRIBUTES = (); }; };
+		FD94710646D743A568C49EB1 /* dialogsprivateplugin in Link Binary With Libraries */ = {isa = PBXBuildFile; fileRef = ADDD2C2A1F132C1B59C70010 /* dialogsprivateplugin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		162AC2FB1E32650000617BDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6DB9C3763D02B1415CD9D565 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74908BDE8DE808A779B912E1;
+			remoteInfo = "Qt Preprocess";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0283515F94EA87DC28A2FEA6 /* boost_date_time */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_date_time; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_date_time.a; sourceTree = "<absolute>"; };
+		04D2816A3C81AE7135D83054 /* ssl */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = ssl; path = "/Users/jacob/crypto/OpenSSL-for-iPhone/lib/libssl.a"; sourceTree = "<absolute>"; };
+		04FF821CC7623EFB82A212A0 /* qtquickcontrolsplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtquickcontrolsplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls/libqtquickcontrolsplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		079A1D73E0A5FB3FF9DDA62F /* moc_Wallet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_Wallet.cpp; path = "/Users/jacob/crypto/monero-core/moc_Wallet.cpp"; sourceTree = "<absolute>"; };
+		07D85A9549FB431FE0FB30ED /* qtiff */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtiff; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqtiff$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		07EC0808CCA698555DEBB06D /* QrSegment.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QrSegment.hpp; path = "/Users/jacob/crypto/monero-core/src/QR-Code-generator/QrSegment.hpp"; sourceTree = "<absolute>"; };
+		0E2872E16E28C11373E70AFB /* moc_Transfer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_Transfer.cpp; path = "/Users/jacob/crypto/monero-core/moc_Transfer.cpp"; sourceTree = "<absolute>"; };
+		0FC297AC2089E78B0EAEB2A5 /* qtga */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtga; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqtga$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		109E57C1A408AE19299A8CC5 /* UnsignedTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UnsignedTransaction.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/UnsignedTransaction.h"; sourceTree = "<absolute>"; };
+		12F1B7847728F25057B7CAFE /* AddressBook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AddressBook.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/AddressBook.cpp"; sourceTree = "<absolute>"; };
+		137C79265FAA9E104EE558A1 /* appicon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = appicon.icns; path = "/Users/jacob/crypto/monero-core/images/appicon.icns"; sourceTree = "<absolute>"; };
+		17A0BACADF77ED10D576A9DA /* softwarecontext */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = softwarecontext; path = "/Users/jacob/Qt/5.7/ios/plugins/scenegraph/libsoftwarecontext$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		182527E22D04CDD4FBD779B9 /* oshelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = oshelper.h; path = "/Users/jacob/crypto/monero-core/oshelper.h"; sourceTree = "<absolute>"; };
+		184E5EF20011C4E78619B00C /* TransactionHistoryModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TransactionHistoryModel.cpp; path = "/Users/jacob/crypto/monero-core/src/model/TransactionHistoryModel.cpp"; sourceTree = "<absolute>"; };
+		197B22E8B64E1126F01073E1 /* Qt5Network */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Network; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5Network$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		1C9296DCAE0F5D36FFB12D4D /* moc_oshelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_oshelper.cpp; path = "/Users/jacob/crypto/monero-core/moc_oshelper.cpp"; sourceTree = "<absolute>"; };
+		1CD5F4FCA45207308A47EBB1 /* qtpcre */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtpcre; path = "/Users/jacob/Qt/5.7/ios/lib/libqtpcre$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		1D198929D99E268355F30C9C /* qtpng */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtpng; path = "/Users/jacob/Qt/5.7/ios/lib/libqtpng$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		1DED310F0BFCD02CFA85869D /* QrSegment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = QrSegment.cpp; path = "/Users/jacob/crypto/monero-core/src/QR-Code-generator/QrSegment.cpp"; sourceTree = "<absolute>"; };
+		205259EEEE2BADA5E64741E3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
+		24CAF412FD0FB383EBEEA3E8 /* moc_TransactionInfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_TransactionInfo.cpp; path = "/Users/jacob/crypto/monero-core/moc_TransactionInfo.cpp"; sourceTree = "<absolute>"; };
+		2558292E6D494B25716CA550 /* zxcvbn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = zxcvbn.h; path = "/Users/jacob/crypto/monero-core/src/zxcvbn-c/zxcvbn.h"; sourceTree = "<absolute>"; };
+		263BD0FC07875F5DD3DAE62B /* TransactionInfo.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TransactionInfo.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/TransactionInfo.cpp"; sourceTree = "<absolute>"; };
+		28D466768E1D8C1DF2449B31 /* windowplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = windowplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2/libwindowplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		298653A8BB98083E366425B6 /* qmldbg_debugger */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_debugger; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_debugger$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		29DC9A2EBC48FA2F55440836 /* Qt5Core */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Core; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5Core$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		2A0D98EB9DCD7168E91CE5CB /* WalletManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WalletManager.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/WalletManager.h"; sourceTree = "<absolute>"; };
+		2A7765762FCD6118E6A5B7AA /* UnsignedTransaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = UnsignedTransaction.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/UnsignedTransaction.cpp"; sourceTree = "<absolute>"; };
+		2D7654C0331241AE02EB9E08 /* qwbmp */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qwbmp; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqwbmp$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		2E2085C3BCB01250351AE5E4 /* qtgraphicaleffectsplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtgraphicaleffectsplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/libqtgraphicaleffectsplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		2FE240C2DD588E65DBE77825 /* qicns */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qicns; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqicns$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		31D27FC19F7EC881DC7C356E /* qmacjp2 */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmacjp2; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqmacjp2$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		327EFAA82EE9F342ADC12ADD /* moc_PendingTransaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_PendingTransaction.cpp; path = "/Users/jacob/crypto/monero-core/moc_PendingTransaction.cpp"; sourceTree = "<absolute>"; };
+		38AC99B08E999B14E1A1CB04 /* TransactionHistory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TransactionHistory.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/TransactionHistory.cpp"; sourceTree = "<absolute>"; };
+		39A83F57EB5B767D9952247B /* moc_clipboardAdapter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_clipboardAdapter.cpp; path = "/Users/jacob/crypto/monero-core/moc_clipboardAdapter.cpp"; sourceTree = "<absolute>"; };
+		3A8EF9C62A8D4790CBB89CEA /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = /System/Library/Frameworks/ImageIO.framework; sourceTree = "<absolute>"; };
+		3AF8A0AAB475521DAE205C01 /* Transfer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Transfer.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/Transfer.h"; sourceTree = "<absolute>"; };
+		3BF1C02B8E9D8CACA844A230 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = LaunchScreen.xib; path = "/Users/jacob/crypto/monero-core/monero-wallet-gui.xcodeproj/LaunchScreen.xib"; sourceTree = "<absolute>"; };
+		3C44131FDCFEF4396B9EA2BA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = /System/Library/Frameworks/AudioToolbox.framework; sourceTree = "<absolute>"; };
+		3D49A6EB3057997290BD8648 /* moc_TranslationManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_TranslationManager.cpp; path = "/Users/jacob/crypto/monero-core/moc_TranslationManager.cpp"; sourceTree = "<absolute>"; };
+		3D959C413E4B213DBD872C43 /* clipboardAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = clipboardAdapter.h; path = "/Users/jacob/crypto/monero-core/clipboardAdapter.h"; sourceTree = "<absolute>"; };
+		3E4C30779F9A0B753D8C75A9 /* Qt5XmlPatterns */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5XmlPatterns; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5XmlPatterns$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		3F037E4C6BD9BF712BABC51A /* Qt5Quick */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Quick; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5Quick$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		42E3BA0427E363A1EA450A79 /* qwebp */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qwebp; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqwebp$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		431F55CC0BADDFBEAD13BB78 /* moc_WalletManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_WalletManager.cpp; path = "/Users/jacob/crypto/monero-core/moc_WalletManager.cpp"; sourceTree = "<absolute>"; };
+		461617F5CEB8E6F3D2C1A852 /* TransactionHistoryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TransactionHistoryModel.h; path = "/Users/jacob/crypto/monero-core/src/model/TransactionHistoryModel.h"; sourceTree = "<absolute>"; };
+		461A792E28E1E9C1D2046F33 /* BitBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BitBuffer.hpp; path = "/Users/jacob/crypto/monero-core/src/QR-Code-generator/BitBuffer.hpp"; sourceTree = "<absolute>"; };
+		46948BABBDB240DB3DB0A924 /* boost_regex */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_regex; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_regex.a; sourceTree = "<absolute>"; };
+		476A2E225BC7873CCEF4DBE1 /* qtfreetype */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtfreetype; path = "/Users/jacob/Qt/5.7/ios/lib/libqtfreetype$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		4A0A3CADEE19DC879A664205 /* crypto */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = crypto; path = "/Users/jacob/crypto/OpenSSL-for-iPhone/lib/libcrypto.a"; sourceTree = "<absolute>"; };
+		4D3AC63AF7C58A4C2A3BC5A9 /* moc_TransactionHistoryModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_TransactionHistoryModel.cpp; path = "/Users/jacob/crypto/monero-core/moc_TransactionHistoryModel.cpp"; sourceTree = "<absolute>"; };
+		4D765E1B1EA6C757220C63E7 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
+		4FDE241A1593866A0DAEBF4D /* qrc_qml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = qrc_qml.cpp; path = "/Users/jacob/crypto/monero-core/qrc_qml.cpp"; sourceTree = "<absolute>"; };
+		527A7549AE5EF354FA1D8BF5 /* moc_TransactionHistorySortFilterModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_TransactionHistorySortFilterModel.cpp; path = "/Users/jacob/crypto/monero-core/moc_TransactionHistorySortFilterModel.cpp"; sourceTree = "<absolute>"; };
+		551AAAA1C4294282A40B1C6F /* qtquick2plugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtquick2plugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick.2/libqtquick2plugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		556B6DB9E700B1CA140794AF /* zxcvbn.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; name = zxcvbn.c; path = "/Users/jacob/crypto/monero-core/src/zxcvbn-c/zxcvbn.c"; sourceTree = "<absolute>"; };
+		58ADC55CC86B15CF690E9A91 /* AddressBookModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AddressBookModel.h; path = "/Users/jacob/crypto/monero-core/src/model/AddressBookModel.h"; sourceTree = "<absolute>"; };
+		5D42263C6C8077409A65B29C /* boost_filesystem */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_filesystem; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_filesystem.a; sourceTree = "<absolute>"; };
+		5F87E18CC3557C107C50F217 /* qmlfolderlistmodelplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmlfolderlistmodelplugin; path = "/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		60F409495FDCF4FAC4DDE545 /* moc_oscursor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_oscursor.cpp; path = "/Users/jacob/crypto/monero-core/moc_oscursor.cpp"; sourceTree = "<absolute>"; };
+		615CACF721F6D5E7DD009BC3 /* qmlsettingsplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmlsettingsplugin; path = "/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings/libqmlsettingsplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		62440CB07FF07B95BB50BDC7 /* oscursor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = oscursor.h; path = "/Users/jacob/crypto/monero-core/oscursor.h"; sourceTree = "<absolute>"; };
+		6592EF73B6B99553C80CB396 /* monero-wallet-gui.pro */ = {isa = PBXFileReference; lastKnownFileType = text; name = "monero-wallet-gui.pro"; path = "/Users/jacob/crypto/monero-core/monero-wallet-gui.pro"; sourceTree = "<absolute>"; };
+		69685672576F293A97938296 /* boost_program_options */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_program_options; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_program_options.a; sourceTree = "<absolute>"; };
+		6AE3EC31EE5BB1FCEE84137C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = /System/Library/Frameworks/CoreGraphics.framework; sourceTree = "<absolute>"; };
+		6D672B5CE17ADC35677D1F5C /* qmldbg_server */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_server; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_server$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		70D89F7C83F0020615FA8DFF /* oshelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = oshelper.cpp; path = "/Users/jacob/crypto/monero-core/oshelper.cpp"; sourceTree = "<absolute>"; };
+		7336C445F639D78D2E70B902 /* qdds */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qdds; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqdds$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		79EAEF9C3E977162F5728DC1 /* qios */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qios; path = "/Users/jacob/Qt/5.7/ios/plugins/platforms/libqios$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		7AB9DF9659C656934CF47D3D /* AddressBook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AddressBook.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/AddressBook.h"; sourceTree = "<absolute>"; };
+		7C06043A9935680579285473 /* unbound */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = unbound; path = "/Users/jacob/crypto/monero-core/monero/lib/libunbound.a"; sourceTree = "<absolute>"; };
+		7C61EF340DCEEC088E3DF502 /* widgetsplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = widgetsplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets/libwidgetsplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		7D7B02101166B76FD2D4F8B4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = /System/Library/Frameworks/CoreText.framework; sourceTree = "<absolute>"; };
+		7E9CCC3E74377D9D22D584A9 /* qmldbg_profiler */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_profiler; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_profiler$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		7EC00404ACD5AB0E97726B0E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		7F7923A84F4733DA01566DBD /* qmlxmllistmodelplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmlxmllistmodelplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel/libqmlxmllistmodelplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		8026A3432315006599498C01 /* BitBuffer.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = BitBuffer.cpp; path = "/Users/jacob/crypto/monero-core/src/QR-Code-generator/BitBuffer.cpp"; sourceTree = "<absolute>"; };
+		81CA822BBC667967343FCEB0 /* deployment.pri */ = {isa = PBXFileReference; lastKnownFileType = text; name = deployment.pri; path = "/Users/jacob/crypto/monero-core/deployment.pri"; sourceTree = "<absolute>"; };
+		8207F0232EDE54B45F2B24B9 /* WalletManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = WalletManager.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/WalletManager.cpp"; sourceTree = "<absolute>"; };
+		8312B2ABAE990FE768E46164 /* monero-wallet-gui_qml_plugin_import.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "monero-wallet-gui_qml_plugin_import.cpp"; path = "/Users/jacob/crypto/monero-core/monero-wallet-gui_qml_plugin_import.cpp"; sourceTree = "<absolute>"; };
+		881EB2224F3820D4B71829C6 /* qquicklayoutsplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qquicklayoutsplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts/libqquicklayoutsplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		88C0AC9AA011FBC81AB87183 /* moc_TransactionHistory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_TransactionHistory.cpp; path = "/Users/jacob/crypto/monero-core/moc_TransactionHistory.cpp"; sourceTree = "<absolute>"; };
+		89445294C111390BDD912364 /* TransactionHistorySortFilterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TransactionHistorySortFilterModel.h; path = "/Users/jacob/crypto/monero-core/src/model/TransactionHistorySortFilterModel.h"; sourceTree = "<absolute>"; };
+		8A130B3A7E935C57501FCECB /* qmldbg_quickprofiler */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_quickprofiler; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_quickprofiler$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		9256C8481D55A8CB35847DC5 /* qmldbg_inspector */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_inspector; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_inspector$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		934A86F63704851872CC8ED5 /* clipboardAdapter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = clipboardAdapter.cpp; path = "/Users/jacob/crypto/monero-core/clipboardAdapter.cpp"; sourceTree = "<absolute>"; };
+		948C258A783A953BD03C6D39 /* filter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = filter.cpp; path = "/Users/jacob/crypto/monero-core/filter.cpp"; sourceTree = "<absolute>"; };
+		958A47AC565511A0B1759FAD /* wallet_merged */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = wallet_merged; path = "/Users/jacob/crypto/monero-core/monero/lib/libwallet_merged.a"; sourceTree = "<absolute>"; };
+		961E4845434E6E5806515CEF /* Wallet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = Wallet.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/Wallet.cpp"; sourceTree = "<absolute>"; };
+		964BE964226590F93A6CBB5A /* Qt5PacketProtocol */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5PacketProtocol; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5PacketProtocol$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		99CF917E8E58AED7C0478DEA /* TransactionInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TransactionInfo.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/TransactionInfo.h"; sourceTree = "<absolute>"; };
+		9AC5B8B14A62BA6D8BC9F607 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = "/Users/jacob/crypto/monero-core/main.cpp"; sourceTree = "<absolute>"; };
+		9B0DEF37C8CBA530ECF0B008 /* qmldbg_tcp */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_tcp; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_tcp$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		9D854A22EBF9286406927355 /* QRCodeImageProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QRCodeImageProvider.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/QRCodeImageProvider.h"; sourceTree = "<absolute>"; };
+		A47D241635309DE82B971646 /* TranslationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TranslationManager.h; path = "/Users/jacob/crypto/monero-core/TranslationManager.h"; sourceTree = "<absolute>"; };
+		A6FEA5A9A1F13E1A57067F84 /* QRCodeImageProvider.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = QRCodeImageProvider.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/QRCodeImageProvider.cpp"; sourceTree = "<absolute>"; };
+		AA7099580EE43DC5F069BDF2 /* monero-wallet-gui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "monero-wallet-gui.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA96878CDC25228CDE7CD5EF /* QrCode.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QrCode.hpp; path = "/Users/jacob/crypto/monero-core/src/QR-Code-generator/QrCode.hpp"; sourceTree = "<absolute>"; };
+		AB15978ED2C6374EAD31A759 /* boost_system */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_system; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_system.a; sourceTree = "<absolute>"; };
+		ACCEE5A6E625267AD06A3AD4 /* TranslationManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TranslationManager.cpp; path = "/Users/jacob/crypto/monero-core/TranslationManager.cpp"; sourceTree = "<absolute>"; };
+		ADDD2C2A1F132C1B59C70010 /* dialogsprivateplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = dialogsprivateplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private/libdialogsprivateplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		B4236B0EC04A21726CC912D0 /* qtgraphicaleffectsprivate */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtgraphicaleffectsprivate; path = "/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private/libqtgraphicaleffectsprivate$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		B48E0C248CDBAAE9A1178633 /* Qt5Qml */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Qml; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5Qml$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		B6CFB7F5922E3BDFE695651B /* qgenericbearer */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qgenericbearer; path = "/Users/jacob/Qt/5.7/ios/plugins/bearer/libqgenericbearer$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		BA0DFDA05FD470B41B7205CA /* qtharfbuzzng */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qtharfbuzzng; path = "/Users/jacob/Qt/5.7/ios/lib/libqtharfbuzzng$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		BBB3013D1EF3C661CE5F6E0B /* boost_thread */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_thread; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_thread.a; sourceTree = "<absolute>"; };
+		BC8AE65B080A5AC201700792 /* TransactionHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TransactionHistory.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/TransactionHistory.h"; sourceTree = "<absolute>"; };
+		BFC8C0077FFB9ADC6DDE8D8B /* qmldbg_native */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_native; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_native$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		C0AB3CA16C071146575C8780 /* qml.qrc */ = {isa = PBXFileReference; lastKnownFileType = text; name = qml.qrc; path = "/Users/jacob/crypto/monero-core/qml.qrc"; sourceTree = "<absolute>"; };
+		C67DF3C3767E06C387E6CA97 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "/Users/jacob/crypto/monero-core/monero-wallet-gui.xcodeproj/Default-568h@2x.png"; sourceTree = "<absolute>"; };
+		C6FDD264EB4959CB2E570B4B /* QrCode.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = QrCode.cpp; path = "/Users/jacob/crypto/monero-core/src/QR-Code-generator/QrCode.cpp"; sourceTree = "<absolute>"; };
+		C90550C531E5ACB67CAAEAA6 /* moc_filter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_filter.cpp; path = "/Users/jacob/crypto/monero-core/moc_filter.cpp"; sourceTree = "<absolute>"; };
+		CBA903C27380222E9BF20044 /* Wallet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Wallet.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/Wallet.h"; sourceTree = "<absolute>"; };
+		CC8F9CC5AB8DE3A189E69E9D /* oscursor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = oscursor.cpp; path = "/Users/jacob/crypto/monero-core/oscursor.cpp"; sourceTree = "<absolute>"; };
+		D2F9BE5ADD1B6CA093EA4A88 /* PendingTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PendingTransaction.h; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/PendingTransaction.h"; sourceTree = "<absolute>"; };
+		D79EEAFAE80AAF7F24D87251 /* filter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = filter.h; path = "/Users/jacob/crypto/monero-core/filter.h"; sourceTree = "<absolute>"; };
+		D79EFC50A7073CDF3BC87933 /* .qmake.stash */ = {isa = PBXFileReference; lastKnownFileType = text; name = .qmake.stash; path = "/Users/jacob/crypto/monero-core/.qmake.stash"; sourceTree = "<absolute>"; };
+		DD7384A72D5E15031B22B756 /* AddressBookModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AddressBookModel.cpp; path = "/Users/jacob/crypto/monero-core/src/model/AddressBookModel.cpp"; sourceTree = "<absolute>"; };
+		E324742F28B72A9F6F01C6D3 /* qmldbg_local */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qmldbg_local; path = "/Users/jacob/Qt/5.7/ios/plugins/qmltooling/libqmldbg_local$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		E3FC1DB88D8300FC76B2FD4B /* Qt5PlatformSupport */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5PlatformSupport; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5PlatformSupport$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		E4620670A71C7D0F76933FD5 /* boost_serialization */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_serialization; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_serialization.a; sourceTree = "<absolute>"; };
+		E5F22C1FA13C41736B0FEC44 /* qico */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = qico; path = "/Users/jacob/Qt/5.7/ios/plugins/imageformats/libqico$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		E994C4733C03A95877F85F12 /* Qt5Widgets */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Widgets; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5Widgets$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		EAEEEFC8824DAB7748B96B23 /* PendingTransaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = PendingTransaction.cpp; path = "/Users/jacob/crypto/monero-core/src/libwalletqt/PendingTransaction.cpp"; sourceTree = "<absolute>"; };
+		EC7523C1A976490578D806ED /* moc_AddressBookModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_AddressBookModel.cpp; path = "/Users/jacob/crypto/monero-core/moc_AddressBookModel.cpp"; sourceTree = "<absolute>"; };
+		F26307D641BC6138F02B8AED /* monero-wallet-gui_plugin_import.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = "monero-wallet-gui_plugin_import.cpp"; path = "/Users/jacob/crypto/monero-core/monero-wallet-gui_plugin_import.cpp"; sourceTree = "<absolute>"; };
+		F3A470E0AD45F7CD3BF9AC7F /* dialogplugin */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = dialogplugin; path = "/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/libdialogplugin$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		F7E24164F2FAF4E6F5540598 /* Qt5Gui */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = Qt5Gui; path = "/Users/jacob/Qt/5.7/ios/lib/libQt5Gui$(QT_LIBRARY_SUFFIX).a"; sourceTree = "<absolute>"; };
+		F849DF665A895835B015E61D /* moc_UnsignedTransaction.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_UnsignedTransaction.cpp; path = "/Users/jacob/crypto/monero-core/moc_UnsignedTransaction.cpp"; sourceTree = "<absolute>"; };
+		FC6E03FA91F42294C637DC08 /* TransactionHistorySortFilterModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = TransactionHistorySortFilterModel.cpp; path = "/Users/jacob/crypto/monero-core/src/model/TransactionHistorySortFilterModel.cpp"; sourceTree = "<absolute>"; };
+		FCB575C43D9B0452DECC683E /* moc_AddressBook.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = moc_AddressBook.cpp; path = "/Users/jacob/crypto/monero-core/moc_AddressBook.cpp"; sourceTree = "<absolute>"; };
+		FCC237CA5AD60B9BA4447615 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		FD36620207F2FF8CAD464DD1 /* boost_chrono */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = boost_chrono; path = /Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64/libboost_chrono.a; sourceTree = "<absolute>"; };
+		FF5BDAB0076F3391B219EA52 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D1C883685E82D5676953459A /* Link Binary With Libraries */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A759B9C17076B070C87B03 /* wallet_merged in Link Binary With Libraries */,
+				EFA8D05ACC23C5C3AB318F1A /* unbound in Link Binary With Libraries */,
+				3B88F5282A94F6B412F8AE43 /* boost_serialization in Link Binary With Libraries */,
+				5A03ED4DFC7581E320E3C272 /* boost_thread in Link Binary With Libraries */,
+				594980245EE5B56E9866F59C /* boost_system in Link Binary With Libraries */,
+				67215E0F652A178B7E2E9D4B /* boost_date_time in Link Binary With Libraries */,
+				4A5056C986373555BDAAF33A /* boost_filesystem in Link Binary With Libraries */,
+				48D6F71FFF5FAD66805D8953 /* boost_regex in Link Binary With Libraries */,
+				401927458922522FCE1EA7BE /* boost_chrono in Link Binary With Libraries */,
+				CA277B8D2BFC8A7D99365D10 /* boost_program_options in Link Binary With Libraries */,
+				B6691DFC86E87766AE367995 /* ssl in Link Binary With Libraries */,
+				1DEA01A41A4A461CFBDC44C3 /* crypto in Link Binary With Libraries */,
+				CEC3EF5EB3E14BDBF21F0B21 /* qios in Link Binary With Libraries */,
+				F26454630C80841CBDCFE1CA /* Foundation.framework in Link Binary With Libraries */,
+				B460F624007324313696BE86 /* QuartzCore.framework in Link Binary With Libraries */,
+				4EB68D0C8182BCE33529C421 /* AudioToolbox.framework in Link Binary With Libraries */,
+				F8B465CE34D8DF87AAE95913 /* CoreFoundation.framework in Link Binary With Libraries */,
+				2B02D9DC58A01E45248DDBCE /* CoreText.framework in Link Binary With Libraries */,
+				0CE02722F00CAD43741297B5 /* CoreGraphics.framework in Link Binary With Libraries */,
+				15364689D2AB5A30E87A689F /* Security.framework in Link Binary With Libraries */,
+				D4639595C3BCF2A39D88DF6E /* SystemConfiguration.framework in Link Binary With Libraries */,
+				3309D7B719389B2B14B21501 /* qtquick2plugin in Link Binary With Libraries */,
+				63F61DD134D2605D296DB395 /* qtgraphicaleffectsplugin in Link Binary With Libraries */,
+				4D3AF4F703124B43895167D7 /* qtgraphicaleffectsprivate in Link Binary With Libraries */,
+				508E35F0D4FCB4AD94798F46 /* windowplugin in Link Binary With Libraries */,
+				C68AD6B1DB4A9B5F81C57432 /* qtquickcontrolsplugin in Link Binary With Libraries */,
+				9DDB0094F1000CA478372FA6 /* dialogplugin in Link Binary With Libraries */,
+				2A156534FC0B931C608A80CA /* qmlsettingsplugin in Link Binary With Libraries */,
+				43981C2D76CE6AF34C9DB5B8 /* qquicklayoutsplugin in Link Binary With Libraries */,
+				E5689907392681DCFD893534 /* qmlfolderlistmodelplugin in Link Binary With Libraries */,
+				FD94710646D743A568C49EB1 /* dialogsprivateplugin in Link Binary With Libraries */,
+				35A68FBC01FC4B2EEE1DEE09 /* widgetsplugin in Link Binary With Libraries */,
+				4F6CD5283B392B8C1D0A2900 /* Qt5Widgets in Link Binary With Libraries */,
+				717AC5AD92D1A362B43B6652 /* qmlxmllistmodelplugin in Link Binary With Libraries */,
+				032888628708CBBD56107ED4 /* Qt5XmlPatterns in Link Binary With Libraries */,
+				812A4F34DD47D7079603818D /* softwarecontext in Link Binary With Libraries */,
+				073C658B3B75DD3B0FF18FC2 /* qdds in Link Binary With Libraries */,
+				094020B06042190DAE719ECC /* qicns in Link Binary With Libraries */,
+				1EF97B4A06E385FB9327BF81 /* qico in Link Binary With Libraries */,
+				12E5705CED2906D8FB1F6717 /* qmacjp2 in Link Binary With Libraries */,
+				61EEC397DC8556BF8C4E36A7 /* ImageIO.framework in Link Binary With Libraries */,
+				EF95AF47DF5CA4F8CEFFFB55 /* Qt5PlatformSupport in Link Binary With Libraries */,
+				691B6070012561E21E96DD50 /* qtfreetype in Link Binary With Libraries */,
+				CD8144E0646089AB4E0BA2B1 /* qtga in Link Binary With Libraries */,
+				E5089762D379AA4D75DA803A /* qtiff in Link Binary With Libraries */,
+				F48C8E856554EE5A139FE68B /* qwbmp in Link Binary With Libraries */,
+				D2FC380E0EC248795748962E /* qwebp in Link Binary With Libraries */,
+				04F20368AC5F8EF813CE5BC9 /* qmldbg_debugger in Link Binary With Libraries */,
+				E5032DA1754F41D1938F3365 /* qmldbg_inspector in Link Binary With Libraries */,
+				0FD860FD7B6F15B661A3417B /* qmldbg_local in Link Binary With Libraries */,
+				C4A234C701D88A47B5AC8AAA /* qmldbg_native in Link Binary With Libraries */,
+				4B1B41A12C25D175A243B4C4 /* qmldbg_profiler in Link Binary With Libraries */,
+				18C7CB26C7296FDC5D0F29BB /* qmldbg_quickprofiler in Link Binary With Libraries */,
+				2172DE0D948FC0B19925F1DD /* Qt5Quick in Link Binary With Libraries */,
+				2F47366C0D65ADF014ADECC3 /* Qt5Gui in Link Binary With Libraries */,
+				F52D345B95B13DB3D03A8EAD /* qtpng in Link Binary With Libraries */,
+				9390C48ABFFC0F924F80D920 /* qtharfbuzzng in Link Binary With Libraries */,
+				C4FCE04A595FCB0FE7FAA2B4 /* qmldbg_server in Link Binary With Libraries */,
+				DB85A611F2D899AA64605603 /* Qt5PacketProtocol in Link Binary With Libraries */,
+				0A9398E5F8D3D8E917F46C41 /* qmldbg_tcp in Link Binary With Libraries */,
+				70F80AD8652CE9C83667A036 /* Qt5Qml in Link Binary With Libraries */,
+				31C3036C188717381B47D939 /* qgenericbearer in Link Binary With Libraries */,
+				2695715E6134421B2C880408 /* Qt5Network in Link Binary With Libraries */,
+				B1719F82FB1BF233B291435C /* Qt5Core in Link Binary With Libraries */,
+				30BC25FA396FDAA19D95B7A3 /* qtpcre in Link Binary With Libraries */,
+			);
+			name = "Link Binary With Libraries";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		25B08E2869634E9BCBA333A2 /* Generated Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8312B2ABAE990FE768E46164 /* monero-wallet-gui_qml_plugin_import.cpp */,
+				F26307D641BC6138F02B8AED /* monero-wallet-gui_plugin_import.cpp */,
+				4FDE241A1593866A0DAEBF4D /* qrc_qml.cpp */,
+				C90550C531E5ACB67CAAEAA6 /* moc_filter.cpp */,
+				39A83F57EB5B767D9952247B /* moc_clipboardAdapter.cpp */,
+				60F409495FDCF4FAC4DDE545 /* moc_oscursor.cpp */,
+				431F55CC0BADDFBEAD13BB78 /* moc_WalletManager.cpp */,
+				079A1D73E0A5FB3FF9DDA62F /* moc_Wallet.cpp */,
+				327EFAA82EE9F342ADC12ADD /* moc_PendingTransaction.cpp */,
+				88C0AC9AA011FBC81AB87183 /* moc_TransactionHistory.cpp */,
+				24CAF412FD0FB383EBEEA3E8 /* moc_TransactionInfo.cpp */,
+				0E2872E16E28C11373E70AFB /* moc_Transfer.cpp */,
+				1C9296DCAE0F5D36FFB12D4D /* moc_oshelper.cpp */,
+				3D49A6EB3057997290BD8648 /* moc_TranslationManager.cpp */,
+				4D3AC63AF7C58A4C2A3BC5A9 /* moc_TransactionHistoryModel.cpp */,
+				527A7549AE5EF354FA1D8BF5 /* moc_TransactionHistorySortFilterModel.cpp */,
+				EC7523C1A976490578D806ED /* moc_AddressBookModel.cpp */,
+				FCB575C43D9B0452DECC683E /* moc_AddressBook.cpp */,
+				F849DF665A895835B015E61D /* moc_UnsignedTransaction.cpp */,
+			);
+			name = "Generated Sources";
+			sourceTree = "<group>";
+		};
+		2EB56BE3C2D93CDAB0C52E67 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				9AC5B8B14A62BA6D8BC9F607 /* main.cpp */,
+				948C258A783A953BD03C6D39 /* filter.cpp */,
+				934A86F63704851872CC8ED5 /* clipboardAdapter.cpp */,
+				CC8F9CC5AB8DE3A189E69E9D /* oscursor.cpp */,
+				921315FAA7F261D737F4F4C7 /* src */,
+				70D89F7C83F0020615FA8DFF /* oshelper.cpp */,
+				ACCEE5A6E625267AD06A3AD4 /* TranslationManager.cpp */,
+				994CFA67844055A0579A5E73 /* images */,
+				D79EEAFAE80AAF7F24D87251 /* filter.h */,
+				3D959C413E4B213DBD872C43 /* clipboardAdapter.h */,
+				62440CB07FF07B95BB50BDC7 /* oscursor.h */,
+				182527E22D04CDD4FBD779B9 /* oshelper.h */,
+				A47D241635309DE82B971646 /* TranslationManager.h */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		74B182DB50CB5611B5C1C297 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6592EF73B6B99553C80CB396 /* monero-wallet-gui.pro */,
+				D79EFC50A7073CDF3BC87933 /* .qmake.stash */,
+				81CA822BBC667967343FCEB0 /* deployment.pri */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CBB9F23A9CC13AD89A6AD36 /* zxcvbn-c */ = {
+			isa = PBXGroup;
+			children = (
+				556B6DB9E700B1CA140794AF /* zxcvbn.c */,
+				2558292E6D494B25716CA550 /* zxcvbn.h */,
+			);
+			name = "zxcvbn-c";
+			sourceTree = "<group>";
+		};
+		858FCAB0EB1F29CF8B07677C /* Bundle Data */ = {
+			isa = PBXGroup;
+			children = (
+				C67DF3C3767E06C387E6CA97 /* Default-568h@2x.png */,
+				3BF1C02B8E9D8CACA844A230 /* LaunchScreen.xib */,
+			);
+			name = "Bundle Data";
+			sourceTree = "<group>";
+		};
+		87DF60DE337FB58864343E39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C0AB3CA16C071146575C8780 /* qml.qrc */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		921315FAA7F261D737F4F4C7 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9D432C34C7445170407B1AAB /* libwalletqt */,
+				BE34A66359E6994487C3FF14 /* model */,
+				BFAF296BBD2894C03471A6C0 /* QR-Code-generator */,
+				7CBB9F23A9CC13AD89A6AD36 /* zxcvbn-c */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+		994CFA67844055A0579A5E73 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				137C79265FAA9E104EE558A1 /* appicon.icns */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		9D432C34C7445170407B1AAB /* libwalletqt */ = {
+			isa = PBXGroup;
+			children = (
+				8207F0232EDE54B45F2B24B9 /* WalletManager.cpp */,
+				961E4845434E6E5806515CEF /* Wallet.cpp */,
+				EAEEEFC8824DAB7748B96B23 /* PendingTransaction.cpp */,
+				38AC99B08E999B14E1A1CB04 /* TransactionHistory.cpp */,
+				263BD0FC07875F5DD3DAE62B /* TransactionInfo.cpp */,
+				A6FEA5A9A1F13E1A57067F84 /* QRCodeImageProvider.cpp */,
+				12F1B7847728F25057B7CAFE /* AddressBook.cpp */,
+				2A7765762FCD6118E6A5B7AA /* UnsignedTransaction.cpp */,
+				2A0D98EB9DCD7168E91CE5CB /* WalletManager.h */,
+				CBA903C27380222E9BF20044 /* Wallet.h */,
+				D2F9BE5ADD1B6CA093EA4A88 /* PendingTransaction.h */,
+				BC8AE65B080A5AC201700792 /* TransactionHistory.h */,
+				99CF917E8E58AED7C0478DEA /* TransactionInfo.h */,
+				9D854A22EBF9286406927355 /* QRCodeImageProvider.h */,
+				3AF8A0AAB475521DAE205C01 /* Transfer.h */,
+				7AB9DF9659C656934CF47D3D /* AddressBook.h */,
+				109E57C1A408AE19299A8CC5 /* UnsignedTransaction.h */,
+			);
+			name = libwalletqt;
+			sourceTree = "<group>";
+		};
+		AF39DD055C3EF8226FBE929D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				958A47AC565511A0B1759FAD /* wallet_merged */,
+				7C06043A9935680579285473 /* unbound */,
+				E4620670A71C7D0F76933FD5 /* boost_serialization */,
+				BBB3013D1EF3C661CE5F6E0B /* boost_thread */,
+				AB15978ED2C6374EAD31A759 /* boost_system */,
+				0283515F94EA87DC28A2FEA6 /* boost_date_time */,
+				5D42263C6C8077409A65B29C /* boost_filesystem */,
+				46948BABBDB240DB3DB0A924 /* boost_regex */,
+				FD36620207F2FF8CAD464DD1 /* boost_chrono */,
+				69685672576F293A97938296 /* boost_program_options */,
+				04D2816A3C81AE7135D83054 /* ssl */,
+				4A0A3CADEE19DC879A664205 /* crypto */,
+				79EAEF9C3E977162F5728DC1 /* qios */,
+				FCC237CA5AD60B9BA4447615 /* Foundation.framework */,
+				7EC00404ACD5AB0E97726B0E /* QuartzCore.framework */,
+				3C44131FDCFEF4396B9EA2BA /* AudioToolbox.framework */,
+				4D765E1B1EA6C757220C63E7 /* CoreFoundation.framework */,
+				7D7B02101166B76FD2D4F8B4 /* CoreText.framework */,
+				6AE3EC31EE5BB1FCEE84137C /* CoreGraphics.framework */,
+				205259EEEE2BADA5E64741E3 /* Security.framework */,
+				FF5BDAB0076F3391B219EA52 /* SystemConfiguration.framework */,
+				551AAAA1C4294282A40B1C6F /* qtquick2plugin */,
+				2E2085C3BCB01250351AE5E4 /* qtgraphicaleffectsplugin */,
+				B4236B0EC04A21726CC912D0 /* qtgraphicaleffectsprivate */,
+				28D466768E1D8C1DF2449B31 /* windowplugin */,
+				04FF821CC7623EFB82A212A0 /* qtquickcontrolsplugin */,
+				F3A470E0AD45F7CD3BF9AC7F /* dialogplugin */,
+				615CACF721F6D5E7DD009BC3 /* qmlsettingsplugin */,
+				881EB2224F3820D4B71829C6 /* qquicklayoutsplugin */,
+				5F87E18CC3557C107C50F217 /* qmlfolderlistmodelplugin */,
+				ADDD2C2A1F132C1B59C70010 /* dialogsprivateplugin */,
+				7C61EF340DCEEC088E3DF502 /* widgetsplugin */,
+				E994C4733C03A95877F85F12 /* Qt5Widgets */,
+				7F7923A84F4733DA01566DBD /* qmlxmllistmodelplugin */,
+				3E4C30779F9A0B753D8C75A9 /* Qt5XmlPatterns */,
+				17A0BACADF77ED10D576A9DA /* softwarecontext */,
+				7336C445F639D78D2E70B902 /* qdds */,
+				2FE240C2DD588E65DBE77825 /* qicns */,
+				E5F22C1FA13C41736B0FEC44 /* qico */,
+				31D27FC19F7EC881DC7C356E /* qmacjp2 */,
+				3A8EF9C62A8D4790CBB89CEA /* ImageIO.framework */,
+				E3FC1DB88D8300FC76B2FD4B /* Qt5PlatformSupport */,
+				476A2E225BC7873CCEF4DBE1 /* qtfreetype */,
+				0FC297AC2089E78B0EAEB2A5 /* qtga */,
+				07D85A9549FB431FE0FB30ED /* qtiff */,
+				2D7654C0331241AE02EB9E08 /* qwbmp */,
+				42E3BA0427E363A1EA450A79 /* qwebp */,
+				298653A8BB98083E366425B6 /* qmldbg_debugger */,
+				9256C8481D55A8CB35847DC5 /* qmldbg_inspector */,
+				E324742F28B72A9F6F01C6D3 /* qmldbg_local */,
+				BFC8C0077FFB9ADC6DDE8D8B /* qmldbg_native */,
+				7E9CCC3E74377D9D22D584A9 /* qmldbg_profiler */,
+				8A130B3A7E935C57501FCECB /* qmldbg_quickprofiler */,
+				3F037E4C6BD9BF712BABC51A /* Qt5Quick */,
+				F7E24164F2FAF4E6F5540598 /* Qt5Gui */,
+				1D198929D99E268355F30C9C /* qtpng */,
+				BA0DFDA05FD470B41B7205CA /* qtharfbuzzng */,
+				6D672B5CE17ADC35677D1F5C /* qmldbg_server */,
+				964BE964226590F93A6CBB5A /* Qt5PacketProtocol */,
+				9B0DEF37C8CBA530ECF0B008 /* qmldbg_tcp */,
+				B48E0C248CDBAAE9A1178633 /* Qt5Qml */,
+				B6CFB7F5922E3BDFE695651B /* qgenericbearer */,
+				197B22E8B64E1126F01073E1 /* Qt5Network */,
+				29DC9A2EBC48FA2F55440836 /* Qt5Core */,
+				1CD5F4FCA45207308A47EBB1 /* qtpcre */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE34A66359E6994487C3FF14 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				184E5EF20011C4E78619B00C /* TransactionHistoryModel.cpp */,
+				FC6E03FA91F42294C637DC08 /* TransactionHistorySortFilterModel.cpp */,
+				DD7384A72D5E15031B22B756 /* AddressBookModel.cpp */,
+				461617F5CEB8E6F3D2C1A852 /* TransactionHistoryModel.h */,
+				89445294C111390BDD912364 /* TransactionHistorySortFilterModel.h */,
+				58ADC55CC86B15CF690E9A91 /* AddressBookModel.h */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		BFAF296BBD2894C03471A6C0 /* QR-Code-generator */ = {
+			isa = PBXGroup;
+			children = (
+				8026A3432315006599498C01 /* BitBuffer.cpp */,
+				C6FDD264EB4959CB2E570B4B /* QrCode.cpp */,
+				1DED310F0BFCD02CFA85869D /* QrSegment.cpp */,
+				461A792E28E1E9C1D2046F33 /* BitBuffer.hpp */,
+				AA96878CDC25228CDE7CD5EF /* QrCode.hpp */,
+				07EC0808CCA698555DEBB06D /* QrSegment.hpp */,
+			);
+			name = "QR-Code-generator";
+			sourceTree = "<group>";
+		};
+		E8C543AB96796ECAA2E65C57 /* monero-wallet-gui */ = {
+			isa = PBXGroup;
+			children = (
+				2EB56BE3C2D93CDAB0C52E67 /* Sources */,
+				25B08E2869634E9BCBA333A2 /* Generated Sources */,
+				74B182DB50CB5611B5C1C297 /* Supporting Files */,
+				87DF60DE337FB58864343E39 /* Resources */,
+				AF39DD055C3EF8226FBE929D /* Frameworks */,
+				858FCAB0EB1F29CF8B07677C /* Bundle Data */,
+				FE0A091FDBFB3E9C31B7A1BD /* Products */,
+			);
+			name = "monero-wallet-gui";
+			sourceTree = "<group>";
+		};
+		FE0A091FDBFB3E9C31B7A1BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA7099580EE43DC5F069BDF2 /* monero-wallet-gui.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA1DB7038CFD4AD6DCFA91C4 /* monero-wallet-gui */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "monero-wallet-gui" */;
+			buildPhases = (
+				F7E50F631C51CD5B5DC0BC43 /* Compile Sources */,
+				D1C883685E82D5676953459A /* Link Binary With Libraries */,
+				776D5E25B18ED6FE9A43064F /* Qt Postlink */,
+				9C316F444A62BF296E3E1F25 /* Project Copy */,
+				30414803F31797EB689AE508 /* Copy Bundle Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A1E5F7F5D56C8D87239BDA67 /* PBXTargetDependency */,
+			);
+			name = "monero-wallet-gui";
+			productInstallPath = debug/bin/;
+			productName = "monero-wallet-gui";
+			productReference = AA7099580EE43DC5F069BDF2 /* monero-wallet-gui.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6DB9C3763D02B1415CD9D565 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "monero-wallet-gui" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E8C543AB96796ECAA2E65C57 /* monero-wallet-gui */;
+			productRefGroup = FE0A091FDBFB3E9C31B7A1BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA1DB7038CFD4AD6DCFA91C4 /* monero-wallet-gui */,
+				74908BDE8DE808A779B912E1 /* Qt Preprocess */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30414803F31797EB689AE508 /* Copy Bundle Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A9D936A2263443954DF3645 /* Default-568h@2x.png in Copy Bundle Resources */,
+				DA42238E653FDFE9225E38A5 /* LaunchScreen.xib in Copy Bundle Resources */,
+				DF97E453832FFA16B4F35DA7 /* appicon.icns in Copy Bundle Resources */,
+			);
+			name = "Copy Bundle Resources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5E618435888B9D49F8540165 /* Qt Qmake */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Qmake";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jacob/crypto/monero-core/ -f monero-wallet-gui.xcodeproj/qt_makeqmake.mak";
+			showEnvVarsInLog = 0;
+		};
+		776D5E25B18ED6FE9A43064F /* Qt Postlink */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = "Qt Postlink";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp /Users/jacob/crypto/monero-core/qt.conf \"$CODESIGNING_FOLDER_PATH/qt.conf\";  test -d \"$CODESIGNING_FOLDER_PATH/qt_qml\" && rm -r \"$CODESIGNING_FOLDER_PATH/qt_qml\";  mkdir -p \"$CODESIGNING_FOLDER_PATH/qt_qml\" &&  for p in /Users/jacob/Qt/5.7/ios/qml; do rsync -r --exclude='*.a' --exclude='*.prl' --exclude='*.qmltypes'  $p/ \"$CODESIGNING_FOLDER_PATH/qt_qml\"; done";
+			showEnvVarsInLog = 0;
+		};
+		7EF0942E79C014DCEC8976BC /* Qt Preprocessors */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "Qt Preprocessors";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/jacob/crypto/monero-core/ -f monero-wallet-gui.xcodeproj/qt_preprocess.mak";
+			showEnvVarsInLog = 0;
+		};
+		9C316F444A62BF296E3E1F25 /* Project Copy */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Project Copy";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cp -r $BUILT_PRODUCTS_DIR/$FULL_PRODUCT_NAME /Users/jacob/crypto/monero-core/debug/bin";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7E50F631C51CD5B5DC0BC43 /* Compile Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2FF25F144ADB461A4B07C91 /* main.cpp in Compile Sources */,
+				BDE2A11F44A139B482D5F657 /* filter.cpp in Compile Sources */,
+				2C14E178866CCD7EBF6F45EA /* clipboardAdapter.cpp in Compile Sources */,
+				0CD4459BA537F8CA541E2A8A /* oscursor.cpp in Compile Sources */,
+				3A8AA8DAFF0D00F02C954954 /* WalletManager.cpp in Compile Sources */,
+				A75E90B0C978E8E46641F503 /* Wallet.cpp in Compile Sources */,
+				8258E9E5C2403D59CEEF89F1 /* PendingTransaction.cpp in Compile Sources */,
+				98B71C5C1EB6E64B1FDE239D /* TransactionHistory.cpp in Compile Sources */,
+				051F0AFD38C35E83D1D943C5 /* TransactionInfo.cpp in Compile Sources */,
+				1451F018B44043E5DEF2B7FA /* QRCodeImageProvider.cpp in Compile Sources */,
+				439BD48EE03C077F9BA2A6C7 /* oshelper.cpp in Compile Sources */,
+				55EBBFE49741C381A3E348FF /* TranslationManager.cpp in Compile Sources */,
+				70FA55D1DF68B08FC95D2167 /* TransactionHistoryModel.cpp in Compile Sources */,
+				70C3DD51D4BD7C2DA82661FC /* TransactionHistorySortFilterModel.cpp in Compile Sources */,
+				F33813A5876AA45B2D116D81 /* BitBuffer.cpp in Compile Sources */,
+				6B36762CA7D04E6A31BFC5EE /* QrCode.cpp in Compile Sources */,
+				9784B3920BD282699317BAE5 /* QrSegment.cpp in Compile Sources */,
+				4D0E36FEE67279F3845D063D /* AddressBookModel.cpp in Compile Sources */,
+				78173D6D299C22B88A10BFBB /* AddressBook.cpp in Compile Sources */,
+				B995CCED8EB08A6B8BE2E837 /* zxcvbn.c in Compile Sources */,
+				0FB8F91522096D66DF0FA474 /* UnsignedTransaction.cpp in Compile Sources */,
+				FC530BF9C02D70917C6B84A3 /* monero-wallet-gui_qml_plugin_import.cpp in Compile Sources */,
+				8BF95C329B3BA78F803DD2D9 /* monero-wallet-gui_plugin_import.cpp in Compile Sources */,
+				274F2B3663C731220A90C8B1 /* qrc_qml.cpp in Compile Sources */,
+				C7947F292CEC798C5F10F53E /* moc_filter.cpp in Compile Sources */,
+				8997ABB0BB0CC2D60805B7D3 /* moc_clipboardAdapter.cpp in Compile Sources */,
+				5AD861734E9DC697385F90F1 /* moc_oscursor.cpp in Compile Sources */,
+				312536ACB83476DC95F29877 /* moc_WalletManager.cpp in Compile Sources */,
+				D1BDE6C8453276776F2BFDA7 /* moc_Wallet.cpp in Compile Sources */,
+				3513F92BD5FF9C6BA8E61D3E /* moc_PendingTransaction.cpp in Compile Sources */,
+				C44A426D2A370A2B560D33D5 /* moc_TransactionHistory.cpp in Compile Sources */,
+				B152ACFAA0B535E600996876 /* moc_TransactionInfo.cpp in Compile Sources */,
+				0CE1DA8EE95C20517C687AA1 /* moc_Transfer.cpp in Compile Sources */,
+				1B49763087C443C2E057A282 /* moc_oshelper.cpp in Compile Sources */,
+				B37FFD0D44D88DE6F629C67C /* moc_TranslationManager.cpp in Compile Sources */,
+				AB6EAF027457F55990C85FA3 /* moc_TransactionHistoryModel.cpp in Compile Sources */,
+				A8C5C5DDEB39525FFDEE7B2D /* moc_TransactionHistorySortFilterModel.cpp in Compile Sources */,
+				0CE81C2714A2BE7EF56B8155 /* moc_AddressBookModel.cpp in Compile Sources */,
+				597F28703E5B1C7BC2DD75AB /* moc_AddressBook.cpp in Compile Sources */,
+				4087C223C19CBCF4AFF01622 /* moc_UnsignedTransaction.cpp in Compile Sources */,
+			);
+			name = "Compile Sources";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A1E5F7F5D56C8D87239BDA67 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74908BDE8DE808A779B912E1 /* Qt Preprocess */;
+			targetProxy = 162AC2FB1E32650000617BDF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		339EE1B2CC4FC24589A0EA95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv7,
+					arm64,
+					i386,
+					x86_64,
+				);
+				"ARCHS[sdk=iphoneos*]" = (
+					armv7,
+					arm64,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = (
+					i386,
+					x86_64,
+				);
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = AZMS58NQA4;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					.,
+					"/Users/jacob/Qt/5.7/ios/mkspecs/macx-ios-clang/ios",
+					monero/include,
+					src/libwalletqt,
+					"src/QR-Code-generator",
+					src,
+					monero/src,
+					../../Qt/5.7/ios/include,
+					../../Qt/5.7/ios/include/QtQuick,
+					../../Qt/5.7/ios/include/QtWidgets,
+					../../Qt/5.7/ios/include/QtGui,
+					../../Qt/5.7/ios/include/QtQml,
+					../../Qt/5.7/ios/include/QtNetwork,
+					../../Qt/5.7/ios/include/QtCore,
+					.,
+					"../../Qt/5.7/ios/mkspecs/macx-ios-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_DIR = "/Users/jacob/crypto/monero-core//debug/bin/";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/jacob/crypto/monero-core/monero/lib",
+					/usr/local/lib,
+					"/Users/jacob/crypto/OpenSSL-for-iPhone/lib",
+					/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64,
+					/Users/jacob/Qt/5.7/ios/plugins/platforms,
+					/System/Library/Frameworks/,
+					/Users/jacob/Qt/5.7/ios/lib,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel,
+					/Users/jacob/Qt/5.7/ios/plugins/scenegraph,
+					/Users/jacob/Qt/5.7/ios/plugins/imageformats,
+					/Users/jacob/Qt/5.7/ios/plugins/qmltooling,
+					/Users/jacob/Qt/5.7/ios/plugins/bearer,
+				);
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-fvisibility=hidden",
+					"-fpascal-strings",
+					"-fmessage-length=0",
+					"-Wno-trigraphs",
+					"-Wreturn-type",
+					"-Wparentheses",
+					"-Wswitch",
+					"-Wno-unused-parameter",
+					"-Wunused-variable",
+					"-Wunused-value",
+					"-Wno-shorten-64-to-32",
+					"-Wno-sign-conversion",
+					"-fexceptions",
+					"-fasm-blocks",
+					"-Wno-missing-field-initializers",
+					"-Wno-missing-prototypes",
+					"-Wno-implicit-atomic-properties",
+					"-Wformat",
+					"-Wno-missing-braces",
+					"-Wno-unused-function",
+					"-Wno-unused-label",
+					"-Wuninitialized",
+					"-Wno-unknown-pragmas",
+					"-Wno-shadow",
+					"-Wno-four-char-constants",
+					"-Wno-sign-compare",
+					"-Wpointer-sign",
+					"-Wno-newline-eof",
+					"-Wdeprecated-declarations",
+					"-Winvalid-offsetof",
+					"-Wno-conversion",
+					"-g",
+					"-fobjc-nonfragile-abi",
+					"-fobjc-legacy-dispatch",
+					"-Wno-deprecated-implementations",
+					"-Wprotocol",
+					"-Wno-selector",
+					"-Wno-strict-selector-match",
+					"-Wno-undeclared-selector",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DDARWIN_NO_CARBON",
+					"-DQT_NO_PRINTER",
+					"-DQT_NO_PRINTDIALOG",
+					"-DQT_QUICK_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_QML_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-fvisibility=hidden",
+					"-fpascal-strings",
+					"-fmessage-length=0",
+					"-Wno-trigraphs",
+					"-Wreturn-type",
+					"-Wparentheses",
+					"-Wswitch",
+					"-Wno-unused-parameter",
+					"-Wunused-variable",
+					"-Wunused-value",
+					"-Wno-shorten-64-to-32",
+					"-Wno-sign-conversion",
+					"-fexceptions",
+					"-fasm-blocks",
+					"-Wno-missing-field-initializers",
+					"-Wno-missing-prototypes",
+					"-Wno-implicit-atomic-properties",
+					"-Wformat",
+					"-Wno-missing-braces",
+					"-Wno-unused-function",
+					"-Wno-unused-label",
+					"-Wuninitialized",
+					"-Wno-unknown-pragmas",
+					"-Wno-shadow",
+					"-Wno-four-char-constants",
+					"-Wno-sign-compare",
+					"-Wpointer-sign",
+					"-Wno-newline-eof",
+					"-Wdeprecated-declarations",
+					"-Winvalid-offsetof",
+					"-Wno-conversion",
+					"-fvisibility-inlines-hidden",
+					"-Wno-non-virtual-dtor",
+					"-Wno-overloaded-virtual",
+					"-Wno-exit-time-destructors",
+					"-g",
+					"-std=c++11",
+					"-fobjc-nonfragile-abi",
+					"-fobjc-legacy-dispatch",
+					"-Wno-deprecated-implementations",
+					"-Wprotocol",
+					"-Wno-selector",
+					"-Wno-strict-selector-match",
+					"-Wno-undeclared-selector",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DDARWIN_NO_CARBON",
+					"-DQT_NO_PRINTER",
+					"-DQT_NO_PRINTDIALOG",
+					"-DQT_QUICK_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_QML_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-stdlib=libc++",
+					"-u",
+					_qt_registerPlatformPlugin,
+					"-Wl,-e,_qt_main_wrapper",
+					"-L/Users/jacob/crypto/monero-core/monero/ios-simulator-lib",
+					"-L/usr/local/lib",
+					"-L/Users/jacob/crypto/OpenSSL-for-iPhone/lib",
+					"-L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64",
+					"-ldl",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/platforms",
+					"-framework",
+					UIKit,
+					"-framework",
+					AssetsLibrary,
+					"-L/Users/jacob/Qt/5.7/ios/lib",
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					OpenGLES,
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick.2",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs",
+					"-L/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts",
+					"-L/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/scenegraph",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/imageformats",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/qmltooling",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/bearer",
+					"-lz",
+					"-lm",
+					"-std=c++11",
+				);
+				PRODUCT_NAME = "monero-wallet-gui";
+				"QMAKE_MAC_SDK_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk;
+				"QMAKE_MAC_SDK_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform;
+				QT_LIBRARY_SUFFIX = "";
+				"QT_LIBRARY_SUFFIX[sdk=iphonesimulator*]" = "_iphonesimulator$(QT_LIBRARY_SUFFIX)";
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/jacob/crypto/monero-core/";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3AA6C32AC930069E80220CF1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = (
+					armv7,
+					arm64,
+					i386,
+					x86_64,
+				);
+				"ARCHS[sdk=iphoneos*]" = (
+					armv7,
+					arm64,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = (
+					i386,
+					x86_64,
+				);
+				CC = /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AZMS58NQA4;
+				DYLIB_COMPATIBILITY_VERSION = 1.0;
+				DYLIB_CURRENT_VERSION = 1.0.0;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				HEADER_SEARCH_PATHS = (
+					.,
+					"/Users/jacob/Qt/5.7/ios/mkspecs/macx-ios-clang/ios",
+					monero/include,
+					src/libwalletqt,
+					"src/QR-Code-generator",
+					src,
+					monero/src,
+					../../Qt/5.7/ios/include,
+					../../Qt/5.7/ios/include/QtQuick,
+					../../Qt/5.7/ios/include/QtWidgets,
+					../../Qt/5.7/ios/include/QtGui,
+					../../Qt/5.7/ios/include/QtQml,
+					../../Qt/5.7/ios/include/QtNetwork,
+					../../Qt/5.7/ios/include/QtCore,
+					.,
+					"../../Qt/5.7/ios/mkspecs/macx-ios-clang",
+				);
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_DIR = "/Users/jacob/crypto/monero-core//debug/bin/";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LDPLUSPLUS = "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++";
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/jacob/crypto/monero-core/monero/lib",
+					/usr/local/lib,
+					"/Users/jacob/crypto/OpenSSL-for-iPhone/lib",
+					/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64,
+					/Users/jacob/Qt/5.7/ios/plugins/platforms,
+					/System/Library/Frameworks/,
+					/Users/jacob/Qt/5.7/ios/lib,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel,
+					/Users/jacob/Qt/5.7/ios/plugins/scenegraph,
+					/Users/jacob/Qt/5.7/ios/plugins/imageformats,
+					/Users/jacob/Qt/5.7/ios/plugins/qmltooling,
+					/Users/jacob/Qt/5.7/ios/plugins/bearer,
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-pipe",
+					"-fvisibility=hidden",
+					"-fpascal-strings",
+					"-fmessage-length=0",
+					"-Wno-trigraphs",
+					"-Wreturn-type",
+					"-Wparentheses",
+					"-Wswitch",
+					"-Wno-unused-parameter",
+					"-Wunused-variable",
+					"-Wunused-value",
+					"-Wno-shorten-64-to-32",
+					"-Wno-sign-conversion",
+					"-fexceptions",
+					"-fasm-blocks",
+					"-Wno-missing-field-initializers",
+					"-Wno-missing-prototypes",
+					"-Wno-implicit-atomic-properties",
+					"-Wformat",
+					"-Wno-missing-braces",
+					"-Wno-unused-function",
+					"-Wno-unused-label",
+					"-Wuninitialized",
+					"-Wno-unknown-pragmas",
+					"-Wno-shadow",
+					"-Wno-four-char-constants",
+					"-Wno-sign-compare",
+					"-Wpointer-sign",
+					"-Wno-newline-eof",
+					"-Wdeprecated-declarations",
+					"-Winvalid-offsetof",
+					"-Wno-conversion",
+					"-g",
+					"-fobjc-nonfragile-abi",
+					"-fobjc-legacy-dispatch",
+					"-Wno-deprecated-implementations",
+					"-Wprotocol",
+					"-Wno-selector",
+					"-Wno-strict-selector-match",
+					"-Wno-undeclared-selector",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DDARWIN_NO_CARBON",
+					"-DQT_NO_PRINTER",
+					"-DQT_NO_PRINTDIALOG",
+					"-DQT_QUICK_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_QML_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-pipe",
+					"-stdlib=libc++",
+					"-fvisibility=hidden",
+					"-fpascal-strings",
+					"-fmessage-length=0",
+					"-Wno-trigraphs",
+					"-Wreturn-type",
+					"-Wparentheses",
+					"-Wswitch",
+					"-Wno-unused-parameter",
+					"-Wunused-variable",
+					"-Wunused-value",
+					"-Wno-shorten-64-to-32",
+					"-Wno-sign-conversion",
+					"-fexceptions",
+					"-fasm-blocks",
+					"-Wno-missing-field-initializers",
+					"-Wno-missing-prototypes",
+					"-Wno-implicit-atomic-properties",
+					"-Wformat",
+					"-Wno-missing-braces",
+					"-Wno-unused-function",
+					"-Wno-unused-label",
+					"-Wuninitialized",
+					"-Wno-unknown-pragmas",
+					"-Wno-shadow",
+					"-Wno-four-char-constants",
+					"-Wno-sign-compare",
+					"-Wpointer-sign",
+					"-Wno-newline-eof",
+					"-Wdeprecated-declarations",
+					"-Winvalid-offsetof",
+					"-Wno-conversion",
+					"-fvisibility-inlines-hidden",
+					"-Wno-non-virtual-dtor",
+					"-Wno-overloaded-virtual",
+					"-Wno-exit-time-destructors",
+					"-g",
+					"-std=c++11",
+					"-fobjc-nonfragile-abi",
+					"-fobjc-legacy-dispatch",
+					"-Wno-deprecated-implementations",
+					"-Wprotocol",
+					"-Wno-selector",
+					"-Wno-strict-selector-match",
+					"-Wno-undeclared-selector",
+					"-Wall",
+					"-W",
+					"-fPIC",
+					"-DDARWIN_NO_CARBON",
+					"-DQT_NO_PRINTER",
+					"-DQT_NO_PRINTDIALOG",
+					"-DQT_QUICK_LIB",
+					"-DQT_WIDGETS_LIB",
+					"-DQT_GUI_LIB",
+					"-DQT_QML_LIB",
+					"-DQT_NETWORK_LIB",
+					"-DQT_CORE_LIB",
+				);
+				OTHER_LDFLAGS = (
+					"-headerpad_max_install_names",
+					"-stdlib=libc++",
+					"-u",
+					_qt_registerPlatformPlugin,
+					"-Wl,-e,_qt_main_wrapper",
+					"-L/Users/jacob/crypto/monero-core/monero/ios-simulator-lib",
+					"-L/usr/local/lib",
+					"-L/Users/jacob/crypto/OpenSSL-for-iPhone/lib",
+					"-L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64",
+					"-ldl",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/platforms",
+					"-framework",
+					UIKit,
+					"-framework",
+					AssetsLibrary,
+					"-L/Users/jacob/Qt/5.7/ios/lib",
+					"-framework",
+					MobileCoreServices,
+					"-framework",
+					OpenGLES,
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick.2",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs",
+					"-L/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts",
+					"-L/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets",
+					"-L/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/scenegraph",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/imageformats",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/qmltooling",
+					"-L/Users/jacob/Qt/5.7/ios/plugins/bearer",
+					"-lz",
+					"-lm",
+					"-std=c++11",
+				);
+				PRODUCT_NAME = "monero-wallet-gui";
+				"QMAKE_MAC_SDK_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk;
+				"QMAKE_MAC_SDK_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform;
+				QT_LIBRARY_SUFFIX = _debug;
+				"QT_LIBRARY_SUFFIX[sdk=iphonesimulator*]" = "_iphonesimulator$(QT_LIBRARY_SUFFIX)";
+				SDKROOT = iphoneos;
+				SYMROOT = "/Users/jacob/crypto/monero-core/";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6666AA5E688052234F6758D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = (
+					armv7,
+					arm64,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = (
+					i386,
+					x86_64,
+				);
+				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = AZMS58NQA4;
+				ENABLE_BITCODE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/jacob/crypto/monero-core/monero/ios-simulator-lib",
+					"/Users/jacob/crypto/OpenSSL-for-iPhone/lib",
+					/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64,
+					/Users/jacob/Qt/5.7/ios/plugins/platforms,
+					/System/Library/Frameworks/,
+					/Users/jacob/Qt/5.7/ios/lib,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel,
+					/Users/jacob/Qt/5.7/ios/plugins/scenegraph,
+					/Users/jacob/Qt/5.7/ios/plugins/imageformats,
+					/Users/jacob/Qt/5.7/ios/plugins/qmltooling,
+					/Users/jacob/Qt/5.7/ios/plugins/bearer,
+				);
+				PRODUCT_NAME = "monero-wallet-gui";
+				"QMAKE_MAC_SDK_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk;
+				"QMAKE_MAC_SDK_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform;
+				QT_LIBRARY_SUFFIX = "";
+				"QT_LIBRARY_SUFFIX[sdk=iphonesimulator*]" = "_iphonesimulator$(QT_LIBRARY_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		77418F46922677BB04ED38DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"ARCHS[sdk=iphoneos*]" = (
+					armv7,
+					arm64,
+				);
+				"ARCHS[sdk=iphonesimulator*]" = (
+					i386,
+					x86_64,
+				);
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = AZMS58NQA4;
+				ENABLE_BITCODE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
+				LIBRARY_SEARCH_PATHS = (
+					"/Users/jacob/crypto/monero-core/monero/ios-simulator-lib",
+					"/Users/jacob/crypto/OpenSSL-for-iPhone/lib",
+					/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64,
+					/Users/jacob/Qt/5.7/ios/plugins/platforms,
+					/System/Library/Frameworks/,
+					/Users/jacob/Qt/5.7/ios/lib,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects,
+					/Users/jacob/Qt/5.7/ios/qml/QtGraphicalEffects/private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Window.2,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Controls,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/settings,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Layouts,
+					/Users/jacob/Qt/5.7/ios/qml/Qt/labs/folderlistmodel,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/Dialogs/Private,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/PrivateWidgets,
+					/Users/jacob/Qt/5.7/ios/qml/QtQuick/XmlListModel,
+					/Users/jacob/Qt/5.7/ios/plugins/scenegraph,
+					/Users/jacob/Qt/5.7/ios/plugins/imageformats,
+					/Users/jacob/Qt/5.7/ios/plugins/qmltooling,
+					/Users/jacob/Qt/5.7/ios/plugins/bearer,
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "monero-wallet-gui";
+				"QMAKE_MAC_SDK_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk;
+				"QMAKE_MAC_SDK_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator10.0.sdk;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphoneos*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform;
+				"QMAKE_MAC_SDK_PLATFORM_PATH[sdk=iphonesimulator*]" = /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform;
+				QT_LIBRARY_SUFFIX = _debug;
+				"QT_LIBRARY_SUFFIX[sdk=iphonesimulator*]" = "_iphonesimulator$(QT_LIBRARY_SUFFIX)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CC3B5D2136C7CD6A5CF5A59 /* Build configuration list for PBXNativeTarget "monero-wallet-gui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77418F46922677BB04ED38DD /* Debug */,
+				6666AA5E688052234F6758D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DAC4C1AA5EDEA1C85E9CA5E6 /* Build configuration list for PBXProject "monero-wallet-gui" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA6C32AC930069E80220CF1 /* Debug */,
+				339EE1B2CC4FC24589A0EA95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6DB9C3763D02B1415CD9D565 /* Project object */;
+}

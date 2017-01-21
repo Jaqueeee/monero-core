@@ -1,21 +1,21 @@
 // Copyright (c) 2014-2015, The Monero Project
-// 
+//
 // All rights reserved.
-// 
+//
 // Redistribution and use in source and binary forms, with or without modification, are
 // permitted provided that the following conditions are met:
-// 
+//
 // 1. Redistributions of source code must retain the above copyright notice, this list of
 //    conditions and the following disclaimer.
-// 
+//
 // 2. Redistributions in binary form must reproduce the above copyright notice, this list
 //    of conditions and the following disclaimer in the documentation and/or other
 //    materials provided with the distribution.
-// 
+//
 // 3. Neither the name of the copyright holder nor the names of its contributors may be
 //    used to endorse or promote products derived from this software without specific
 //    prior written permission.
-// 
+//
 // THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
 // EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
 // MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL
@@ -32,6 +32,7 @@
 #include <QStandardPaths>
 #include <QDebug>
 #include <QObject>
+#include <QPushButton>
 #include "clipboardAdapter.h"
 #include "filter.h"
 #include "oscursor.h"
@@ -46,13 +47,17 @@
 #include "TransactionHistory.h"
 #include "model/TransactionHistoryModel.h"
 #include "model/TransactionHistorySortFilterModel.h"
-#include "daemon/DaemonManager.h"
 #include "AddressBook.h"
 #include "model/AddressBookModel.h"
 
+// ios exclusions
+#ifndef Q_OS_IOS
+#include "daemon/DaemonManager.h"
+#endif
 
 int main(int argc, char *argv[])
 {
+
     QApplication app(argc, argv);
 
     qDebug() << "app startd";
@@ -95,10 +100,10 @@ int main(int argc, char *argv[])
 
     qmlRegisterUncreatableType<TransactionInfo>("moneroComponents.TransactionInfo", 1, 0, "TransactionInfo",
                                                         "TransactionHistory can't be instantiated directly");
-
+#ifndef Q_OS_IOS
     qmlRegisterUncreatableType<DaemonManager>("moneroComponents.DaemonManager", 1, 0, "DaemonManager",
                                                    "DaemonManager can't be instantiated directly");
-
+#endif
     qmlRegisterUncreatableType<AddressBookModel>("moneroComponents.AddressBookModel", 1, 0, "AddressBookModel",
                                                         "AddressBookModel can't be instantiated directly");
 
@@ -122,9 +127,13 @@ int main(int argc, char *argv[])
 
     engine.addImageProvider(QLatin1String("qrcode"), new QRCodeImageProvider());
     const QStringList arguments = QCoreApplication::arguments();
+
+// daemon manager doesnt work with ios
+#ifndef Q_OS_IOS
     DaemonManager * daemonManager = DaemonManager::instance(&arguments);
     QObject::connect(&app, SIGNAL(aboutToQuit()), daemonManager, SLOT(closing()));
     engine.rootContext()->setContextProperty("daemonManager", daemonManager);
+#endif
 
 //  export to QML monero accounts root directory
 //  wizard is talking about where

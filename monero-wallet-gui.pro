@@ -75,6 +75,24 @@ LIBS += -L$$WALLET_ROOT/lib \
         -lwallet_merged \
          $$WALLET_ROOT/build/release/contrib/epee/src/libepee.a \
         -lunbound
+ios {
+    message("Host is IOS")
+    LIBS+= \
+        -L/usr/local/lib \
+        -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \
+#        -L/usr/local/opt/boost/lib \
+        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64 \
+        -lboost_serialization \
+        -lboost_thread \
+        -lboost_system \
+        -lboost_date_time \
+        -lboost_filesystem \
+        -lboost_regex \
+        -lboost_chrono \
+        -lboost_program_options \
+        -lssl \
+        -lcrypto \
+        -ldl
 
 
 # currently we only support x86 build as qt.io only provides prebuilt qt for x86 mingw
@@ -187,6 +205,23 @@ macx {
         -lcrypto \
         -ldl
 
+#    LIBS+= \
+#        -L/usr/local/lib \
+#        -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \
+##        -L/usr/local/opt/boost/lib \
+#        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64 \
+#        -lboost_serialization \
+#        -lboost_thread \
+#        -lboost_system \
+#        -lboost_date_time \
+#        -lboost_filesystem \
+#        -lboost_regex \
+#        -lboost_chrono \
+#        -lboost_program_options \
+#        -lssl \
+#        -lcrypto \
+#        -ldl
+
 }
 
 
@@ -207,12 +242,12 @@ TRANSLATIONS =  \ # English is default language, no explicit translation file
 CONFIG(release, debug|release) {
     DESTDIR = release/bin
     LANGUPD_OPTIONS = -locations relative -no-ui-lines
-    LANGREL_OPTIONS = -compress -nounfinished -removeidentical
+#    LANGREL_OPTIONS = -compress -nounfinished -removeidentical
 
 } else {
     DESTDIR = debug/bin
     LANGUPD_OPTIONS =
-    LANGREL_OPTIONS = -markuntranslated "MISS_TR "
+#    LANGREL_OPTIONS = -markuntranslated "MISS_TR "
 }
 
 TARGET_FULL_PATH = $$OUT_PWD/$$DESTDIR
@@ -226,29 +261,29 @@ macx {
 
 
 isEmpty(QMAKE_LUPDATE) {
-    win32:LANGUPD = $$[QT_INSTALL_BINS]\lupdate.exe
-    else:LANGUPD = $$[QT_INSTALL_BINS]/lupdate
+#    win32:LANGUPD = $$[QT_INSTALL_BINS]\lupdate.exe
+#    else:LANGUPD = $$[QT_INSTALL_BINS]/lupdate
 }
 
 isEmpty(QMAKE_LRELEASE) {
-    win32:LANGREL = $$[QT_INSTALL_BINS]\lrelease.exe
-    else:LANGREL = $$[QT_INSTALL_BINS]/lrelease
+#    win32:LANGREL = $$[QT_INSTALL_BINS]\lrelease.exe
+#    else:LANGREL = $$[QT_INSTALL_BINS]/lrelease
 }
 
-langupd.command = \
-    $$LANGUPD $$LANGUPD_OPTIONS $$shell_path($$_PRO_FILE) -ts $$_PRO_FILE_PWD/$$TRANSLATIONS
+#langupd.command = \
+#    $$LANGUPD $$LANGUPD_OPTIONS $$shell_path($$_PRO_FILE) -ts $$_PRO_FILE_PWD/$$TRANSLATIONS
 
 
 
-langrel.depends = langupd
-langrel.input = TRANSLATIONS
-langrel.output = $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
-langrel.commands = \
-    $$LANGREL $$LANGREL_OPTIONS ${QMAKE_FILE_IN} -qm $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
-langrel.CONFIG += no_link
+#langrel.depends = langupd
+#langrel.input = TRANSLATIONS
+#langrel.output = $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
+#langrel.commands = \
+#    $$LANGREL $$LANGREL_OPTIONS ${QMAKE_FILE_IN} -qm $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
+#langrel.CONFIG += no_link
 
 QMAKE_EXTRA_TARGETS += langupd deploy deploy_win
-QMAKE_EXTRA_COMPILERS += langrel
+#QMAKE_EXTRA_COMPILERS += langrel
 
 
 
@@ -257,7 +292,7 @@ QMAKE_EXTRA_COMPILERS += langrel
 # by invoking 'get_libwallet_api.sh Debug'
 # so we update translations everytime even for debug build
 
-PRE_TARGETDEPS += langupd compiler_langrel_make_all
+#PRE_TARGETDEPS += langupd compiler_langrel_make_all
 
 RESOURCES += qml.qrc
 

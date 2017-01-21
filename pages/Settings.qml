@@ -88,7 +88,6 @@ Rectangle {
         RowLayout {
             StandardButton {
                 id: closeWalletButton
-                width: 100
                 text: qsTr("Close wallet") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
@@ -278,10 +277,6 @@ Rectangle {
         }
 
         RowLayout {
-            id: daemonAddrRow
-            Layout.fillWidth: true
-            spacing: 10
-
             Label {
                 id: daemonAddrLabel
 
@@ -290,6 +285,12 @@ Rectangle {
                 text: qsTr("Daemon address") + translationManager.emptyString
                 fontSize: 16
             }
+        }
+
+        RowLayout {
+            id: daemonAddrRow
+            Layout.fillWidth: true
+            spacing: 10
 
             LineEdit {
                 id: daemonAddr
