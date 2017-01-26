@@ -36,8 +36,6 @@ import 'utils.js' as Utils
 // Reusable component for managing wallet (account name, path, private key)
 
 ColumnLayout {
-    anchors.left: parent.left
-    anchors.right: parent.right
     spacing: 5
 
     property alias titleText: titleText.text
@@ -239,7 +237,6 @@ ColumnLayout {
     }
 
     ColumnLayout {
-
         Label {
             Layout.fillWidth: true
             Layout.topMargin: 20
