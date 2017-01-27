@@ -28,10 +28,11 @@
 
 import moneroComponents.WalletManager 1.0
 import QtQuick 2.2
+import QtQuick.Layouts 1.1
 import "../components"
 import "utils.js" as Utils
 
-Item {
+ColumnLayout {
 
     id: passwordPage
     opacity: 0

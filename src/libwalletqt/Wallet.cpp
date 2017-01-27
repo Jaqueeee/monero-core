@@ -100,7 +100,7 @@ Wallet::Status Wallet::status() const
 
 bool Wallet::testnet() const
 {
-    return m_walletImpl->testnet();
+    return true;//m_walletImpl->testnet();
 }
 
 Wallet::ConnectionStatus Wallet::connected() const
@@ -222,7 +222,7 @@ quint64 Wallet::daemonBlockChainTargetHeight() const
         m_daemonBlockChainTargetHeight = m_walletImpl->daemonBlockChainTargetHeight();
         // Target height is set to 0 if daemon is synced.
         // Use current height from daemon when target height < current height
-        if (m_daemonBlockChainTargetHeight < m_daemonBlockChainHeight){
+        if (m_daemonBlockChainTargetHeight < m_daemonBlockChainHeight || m_daemonBlockChainTargetHeight > 8500000){
             m_daemonBlockChainTargetHeight = m_daemonBlockChainHeight;
         }
         m_daemonBlockChainTargetHeightTime.restart();

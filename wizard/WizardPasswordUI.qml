@@ -28,10 +28,11 @@
 
 import moneroComponents.WalletManager 1.0
 import QtQuick 2.2
+import QtQuick.Layouts 1.1
 import "../components"
 import "utils.js" as Utils
 
-FocusScope {
+ColumnLayout {
     property alias password: passwordItem.password
     property alias confirmPassword: retypePasswordItem.password
     property bool passwordsMatch: passwordItem.password === retypePasswordItem.password
@@ -58,10 +59,8 @@ FocusScope {
 
     WizardPasswordInput {
         id: passwordItem
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 24
-        width: 300
-        height: 62
+        Layout.fillWidth: true
+        Layout.preferredWidth: 300
         placeholderText : qsTr("Password") + translationManager.emptyString;
         KeyNavigation.tab: retypePasswordItem
         onChanged: handlePassword()
@@ -70,22 +69,16 @@ FocusScope {
 
     WizardPasswordInput {
         id: retypePasswordItem
-        anchors.top: passwordItem.bottom
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.topMargin: 24
-        width: 300
-        height: 62
+        Layout.fillWidth: true
+        Layout.preferredWidth: 300
         placeholderText : qsTr("Confirm password") + translationManager.emptyString;
         KeyNavigation.tab: passwordItem
         onChanged: handlePassword()
     }
 
     PrivacyLevelSmall {
+        Layout.fillWidth: true
         id: privacyLevel
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.top: retypePasswordItem.bottom
-        anchors.topMargin: 60
         background: "#F0EEEE"
         interactive: false
     }

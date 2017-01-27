@@ -27,8 +27,10 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import QtQuick 2.2
+import QtQuick.Layouts 1.1
 
-Item {
+
+ColumnLayout {
     opacity: 0
     visible: false
     Behavior on opacity {
@@ -81,12 +83,10 @@ Item {
     }
 
 
-    Row {
+    RowLayout {
         id: dotsRow
-        anchors.top: parent.top
-        anchors.right: parent.right
-        anchors.topMargin: 85
-        spacing: 6
+        Layout.topMargin: 25
+        Layout.alignment: Qt.AlignRight
 
         ListModel {
             id: dotsModel
@@ -106,19 +106,14 @@ Item {
         }
     }
 
-    Column {
+    ColumnLayout {
         id: headerColumn
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.leftMargin: 16
-        anchors.rightMargin: 16
-        anchors.top: parent.top
-        anchors.topMargin: 74
-        spacing: 24
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
+        Layout.fillWidth:true
 
         Text {
-            anchors.left: parent.left
-            width: headerColumn.width - dotsRow.width - 16
+            Layout.fillWidth: true
             font.family: "Arial"
             font.pixelSize: 28
             wrapMode: Text.Wrap
@@ -130,6 +125,8 @@ Item {
 
         Text {
             id: settingsText
+            Layout.minimumWidth: 300
+            Layout.fillWidth: true
             anchors.left: parent.left
             anchors.right: parent.right
             font.family: "Arial"

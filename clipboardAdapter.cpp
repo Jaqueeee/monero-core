@@ -27,6 +27,7 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include "clipboardAdapter.h"
+#include <QDebug>
 
 clipboardAdapter::clipboardAdapter(QObject *parent) :
     QObject(parent)
@@ -37,4 +38,5 @@ clipboardAdapter::clipboardAdapter(QObject *parent) :
 void clipboardAdapter::setText(const QString &text) {
     m_pClipboard->setText(text, QClipboard::Clipboard);
     m_pClipboard->setText(text, QClipboard::Selection);
+    qDebug() << "Clipboard " + text;
 }

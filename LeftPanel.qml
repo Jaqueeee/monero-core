@@ -27,10 +27,10 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import QtQuick 2.2
+import QtQuick.Controls 1.4
 import QtGraphicalEffects 1.0
 import moneroComponents.Wallet 1.0
 import "components"
-
 Rectangle {
     id: panel
 

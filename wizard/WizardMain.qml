@@ -29,16 +29,21 @@
 import QtQuick 2.2
 import Qt.labs.settings 1.0
 import QtQuick.Dialogs 1.2
-import QtQuick.Layouts 1.2
+import QtQuick.Layouts 1.1
 
 import "../components"
 
-GridLayout {
+ColumnLayout {
     anchors.fill: parent
+    Layout.fillHeight: true
     id: wizard
     property alias nextButton : nextButton
     property var settings : ({})
     property int currentPage: 0
+    property int wizardLeftMargin: (!isMobile) ?  150 : 25
+    property int wizardRightMargin: (!isMobile) ? 150 : 25
+    property int wizardBottomMargin: (isMobile) ? 150 : 25
+    property int wizardTopMargin: (isMobile) ? 25 : 50
 
     property var paths: {
      //   "create_wallet" : [welcomePage, optionsPage, createWalletPage, passwordPage, donationPage, finishPage ],
@@ -227,50 +232,17 @@ GridLayout {
         }
     }
 
-    Rectangle {
-        id: nextButton
-        anchors.verticalCenter: parent.verticalCenter
-        anchors.right: parent.right
-        anchors.rightMargin: 50
-        visible: wizard.currentPage !== 1 && wizard.currentPage !== 6
-        width: 50; height: 50
-        radius: 25
-        color: enabled ? nextArea.containsMouse ? "#FF4304" : "#FF6C3C" : "#DBDBDB"
-
-
-        Image {
-            anchors.centerIn: parent
-            anchors.horizontalCenterOffset: 3
-            source: "qrc:///images/nextPage.png"
-        }
-
-        MouseArea {
-            id: nextArea
-            anchors.fill: parent
-            hoverEnabled: true
-            onClicked: wizard.switchPage(true)
-        }
-    }
-
-
     WizardWelcome {
         id: welcomePage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
+
     }
 
     WizardOptions {
         id: optionsPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
         onCreateWalletClicked: wizard.openCreateWalletPage()
         onRecoveryWalletClicked: wizard.openRecoveryWalletPage()
         onOpenWalletClicked: wizard.openOpenWalletPage();
@@ -278,68 +250,47 @@ GridLayout {
 
     WizardCreateWallet {
         id: createWalletPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
     }
 
     WizardCreateViewOnlyWallet {
         id: createViewOnlyWalletPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
     }
 
     WizardRecoveryWallet {
         id: recoveryWalletPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
     }
 
     WizardPassword {
         id: passwordPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
     }
 
     WizardDonation {
         id: donationPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
     }
 
     WizardFinish {
         id: finishPage
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
-        anchors.right: nextButton.left
-        anchors.left: prevButton.right
-        anchors.leftMargin: 50
-        anchors.rightMargin: 50
+        Layout.bottomMargin: wizardBottomMargin
+        Layout.topMargin: wizardTopMargin
     }
 
     Rectangle {
         id: prevButton
-        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenter: (!isMobile) ? parent.verticalCenter : undefined
+        anchors.bottom: (isMobile) ? parent.bottom : undefined
+        anchors.top: undefined
         anchors.left: parent.left
+        anchors.bottomMargin: 50
         anchors.leftMargin: 50
         visible: parent.currentPage > 0
 
@@ -361,12 +312,40 @@ GridLayout {
         }
     }
 
+    Rectangle {
+        id: nextButton
+        anchors.verticalCenter: (!isMobile) ? parent.verticalCenter : undefined
+        anchors.bottom: (isMobile) ? parent.bottom : undefined
+        anchors.top: undefined
+        anchors.right: parent.right
+        anchors.rightMargin: 50
+        anchors.bottomMargin: 50
+
+        visible: wizard.currentPage !== 1 && wizard.currentPage !== 6
+        width: 50; height: 50
+        radius: 25
+        color: enabled ? nextArea.containsMouse ? "#FF4304" : "#FF6C3C" : "#DBDBDB"
+
+
+        Image {
+            anchors.centerIn: parent
+            anchors.horizontalCenterOffset: 3
+            source: "qrc:///images/nextPage.png"
+        }
+
+        MouseArea {
+            id: nextArea
+            anchors.fill: parent
+            hoverEnabled: true
+            onClicked: wizard.switchPage(true)
+        }
+    }
+
     StandardButton {
         id: sendButton
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         anchors.margins: 50
-        width: 110
         text: qsTr("USE MONERO") + translationManager.emptyString
         shadowReleasedColor: "#FF4304"
         shadowPressedColor: "#B32D00"
@@ -384,7 +363,6 @@ GridLayout {
        anchors.right: parent.right
        anchors.bottom: parent.bottom
        anchors.margins: 50
-       width: 110
        text: qsTr("Create wallet") + translationManager.emptyString
        shadowReleasedColor: "#FF4304"
        shadowPressedColor: "#B32D00"
@@ -417,7 +395,6 @@ GridLayout {
        anchors.right: createViewOnlyWalletButton.left
        anchors.bottom: parent.bottom
        anchors.margins: 50
-       width: 110
        text: qsTr("Abort") + translationManager.emptyString
        shadowReleasedColor: "#FF4304"
        shadowPressedColor: "#B32D00"

@@ -65,6 +65,7 @@ ApplicationWindow {
     property bool viewOnly: false
     property bool foundNewBlock: false
     property int timeToUnlock: 0
+    property var isMobile: (appWindow.width > 600) ? false : true
 
     // true if wallet ever synchronized
     property bool walletInitialized : false
@@ -420,6 +421,8 @@ ApplicationWindow {
     }
 
     function walletsFound() {
+        if(isIos)
+            return false;
         if (persistentSettings.wallet_path.length > 0) {
             return walletManager.walletExists(persistentSettings.wallet_path);
         }
@@ -783,7 +786,7 @@ ApplicationWindow {
         property bool   is_recovering : false
         property bool   customDecorations : true
         property string daemonFlags
-        property int logLevel: 0
+        property int logLevel: 4
     }
 
     // Information dialog

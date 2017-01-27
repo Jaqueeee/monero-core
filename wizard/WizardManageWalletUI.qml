@@ -37,10 +37,9 @@ import 'utils.js' as Utils
 
 ColumnLayout {
     spacing: 5
-
+    id: page
     property alias titleText: titleText.text
     property alias accountNameText: accountName.text
-    property alias wordsTextTitle: frameHeader.text
     property alias walletPath: fileUrlInput.text
     property alias wordsTextItem : memoTextItem
     property alias restoreHeight : restoreHeightItem.text
@@ -54,6 +53,7 @@ ColumnLayout {
     property bool recoverMode: false
     // Recover form seed or keys
     property bool recoverFromSeedMode: true
+    property int rowSpacing: 10
 
     function checkFields(){
         var addressOK = walletManager.addressValid(addressLine.text, wizard.settings.testnet)
@@ -87,10 +87,10 @@ ColumnLayout {
     }
 
     RowLayout {
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
         id: dotsRow
-        Layout.topMargin: 85
         Layout.alignment: Qt.AlignRight
-        spacing: 6
 
         ListModel {
             id: dotsModel
@@ -112,7 +112,10 @@ ColumnLayout {
     }
 
     RowLayout {
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
         id: headerColumn
+        Layout.fillWidth: true
         Text {
             Layout.fillWidth: true
             horizontalAlignment: Text.AlignHCenter
@@ -125,25 +128,33 @@ ColumnLayout {
     }
 
     ColumnLayout {
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
+        Layout.bottomMargin: rowSpacing
 
         Label {
-            Layout.fillWidth: true
             Layout.topMargin: 20
             fontSize: 14
-            text: qsTr("Wallet name")
-                  + translationManager.emptyString
+            text:  qsTr("Wallet name")
+                   + translationManager.emptyString
+
         }
 
         LineEdit {
             id: accountName
-            Layout.fillWidth: true
+            Layout.fillWidth:true
+            Layout.maximumWidth: 600
+            Layout.minimumWidth: 200
             text: defaultAccountName
             onTextUpdated: checkNextButton()
         }
     }
 
     RowLayout{
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
         visible: recoverMode
+        spacing: 0
         StandardButton {
             id: recoverFromSeedButton
             text: qsTr("Restore from seed") + translationManager.emptyString
@@ -174,61 +185,74 @@ ColumnLayout {
     }
 
     // Recover from seed
-    RowLayout {
+    ColumnLayout {
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
+//        Layout.bottomMargin: rowSpacing
+//        Layout.fillWidth: true
         id: recoverFromSeed
         visible: !recoverMode || ( recoverMode && recoverFromSeedMode)
+        Label {
+            visible: !recoverMode
+            Layout.fillWidth: true
+            Layout.topMargin: 20
+            fontSize: 14
+            text: qsTr("Wallet 25 word mnemonic seed") + translationManager.emptyString
+                  + translationManager.emptyString
+        }
         WizardMemoTextInput {
             id : memoTextItem
             Layout.fillWidth: true
-            Layout.preferredWidth: 600
+            Layout.maximumWidth: 600
             Layout.minimumWidth: 300
         }
     }
 
     // Recover from keys
     GridLayout {
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
+        Layout.bottomMargin: page.rowSpacing
+        rowSpacing: page.rowSpacing
         id: recoverFromKeys
         visible: recoverMode && !recoverFromSeedMode
         columns: 1
         LineEdit {
             Layout.fillWidth: true
             id: addressLine
+            Layout.maximumWidth: 600
+            Layout.minimumWidth: 300
             placeholderText: qsTr("Account address (public)")
             onTextUpdated: checkNextButton()
         }
         LineEdit {
             Layout.fillWidth: true
             id: viewKeyLine
+            Layout.maximumWidth: 600
+            Layout.minimumWidth: 300
             placeholderText: qsTr("View key (private)")
             onTextUpdated: checkNextButton()
 
         }
         LineEdit {
             Layout.fillWidth: true
+            Layout.maximumWidth: 600
+            Layout.minimumWidth: 300
             id: spendKeyLine
             placeholderText: qsTr("Spend key (private)")
             onTextUpdated: checkNextButton()
         }
     }
 
+    // Restore Height
     RowLayout {
-        Text {
-            visible: false
-            Layout.fillWidth: true
-            id: frameHeader
-            font.family: "Arial"
-            font.pixelSize: 24
-            font.bold: true
-            wrapMode: Text.Wrap
-            color: "#4A4646"
-        }
-    }
-
-    RowLayout {
-        // Restore Height
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
+        visible: restoreHeightItem.visible // Prevents empty RowLayout bug
         LineEdit {
             id: restoreHeightItem
-            Layout.preferredWidth: 250
+            Layout.maximumWidth: 600
+            Layout.minimumWidth: 300
             placeholderText: qsTr("Restore height (optional)")
             validator: IntValidator {
                 bottom:0
@@ -236,7 +260,10 @@ ColumnLayout {
         }
     }
 
+    // Wallet store location
     ColumnLayout {
+        Layout.leftMargin: wizardLeftMargin
+        Layout.rightMargin: wizardRightMargin
         Label {
             Layout.fillWidth: true
             Layout.topMargin: 20
@@ -245,15 +272,12 @@ ColumnLayout {
                   + translationManager.emptyString
         }
 
-        TextInput {
-            Layout.fillWidth: true
+        LineEdit {
             id: fileUrlInput
-            clip: true
-            font.family: "Arial"
-            font.pixelSize: 18
-            color: "#6B0072"
-            selectByMouse: true
             text: moneroAccountsDir + "/"
+            Layout.fillWidth:true
+            Layout.maximumWidth: 600
+            Layout.minimumWidth: 300
             // workaround for the bug "filechooser only opens once"
             MouseArea {
                 anchors.fill: parent

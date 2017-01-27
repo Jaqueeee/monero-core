@@ -48,7 +48,7 @@ Rectangle {
         font.pixelSize: 15
         font.letterSpacing: -1
         color: "#FFFFFF"
-        text: titleBar.title
+        text: appWindow.width //titleBar.title
         visible: customDecorations
     }
 

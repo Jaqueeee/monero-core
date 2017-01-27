@@ -85,7 +85,7 @@ Item {
         horizontalAlignment: Text.AlignHCenter
         font.family: "Arial"
         font.bold: true
-        font.letterSpacing: -1
+//        font.letterSpacing: -1
         font.pixelSize: button.fontSize
         color: parent.textColor
         visible: parent.icon === ""

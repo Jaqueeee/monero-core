@@ -49,8 +49,8 @@ Wallet *WalletManager::openWallet(const QString &path, const QString &password, 
 
     Monero::Wallet * w =  m_pimpl->openWallet(path.toStdString(), password.toStdString(), testnet);
     qDebug("%s: opened wallet: %s, status: %d", __PRETTY_FUNCTION__, w->address().c_str(), w->status());
-    WalletManager * wm = const_cast<WalletManager*>(this);
-    m_currentWallet  = new Wallet(w,wm);
+//    WalletManager * wm = const_cast<WalletManager*>(this);
+    m_currentWallet  = new Wallet(w);
 
     // move wallet to the GUI thread. Otherwise it wont be emitting signals
     if (m_currentWallet->thread() != qApp->thread()) {
@@ -62,20 +62,19 @@ Wallet *WalletManager::openWallet(const QString &path, const QString &password, 
 
 void WalletManager::openWalletAsync(const QString &path, const QString &password, bool testnet)
 {
+//        openWallet(path,password,testnet);
+//        emit walletOpened(m_currentWallet);
+    QFuture<Wallet*> future = QtConcurrent::run(this, &WalletManager::openWallet,
+                                        path, password, testnet);
+    QFutureWatcher<Wallet*> * watcher = new QFutureWatcher<Wallet*>();
 
-        openWallet(path,password,testnet);
-        emit walletOpened(m_currentWallet);
-//    QFuture<Wallet*> future = QtConcurrent::run(this, &WalletManager::openWallet,
-//                                        path, password, testnet);
-//    QFutureWatcher<Wallet*> * watcher = new QFutureWatcher<Wallet*>();
-
-//    connect(watcher, &QFutureWatcher<Wallet*>::finished,
-//            this, [this, watcher]() {
-//        QFuture<Wallet*> future = watcher->future();
-//        watcher->deleteLater();
-//        emit walletOpened(future.result());
-//    });
-//    watcher->setFuture(future);
+    connect(watcher, &QFutureWatcher<Wallet*>::finished,
+            this, [this, watcher]() {
+        QFuture<Wallet*> future = watcher->future();
+        watcher->deleteLater();
+        emit walletOpened(future.result());
+    });
+    watcher->setFuture(future);
 }
 
 
@@ -101,9 +100,9 @@ Wallet *WalletManager::createWalletFromKeys(const QString &path, const QString &
         delete m_currentWallet;
         m_currentWallet = NULL;
     }
-    Monero::Wallet * w = m_pimpl->createWalletFromKeys(path.toStdString(), language.toStdString(), testnet, restoreHeight,
-                                                       address.toStdString(), viewkey.toStdString(), spendkey.toStdString());
-    m_currentWallet = new Wallet(w);
+//    Monero::Wallet * w = m_pimpl->createWalletFromKeys(path.toStdString(), language.toStdString(), testnet, restoreHeight,
+//                                                       address.toStdString(), viewkey.toStdString(), spendkey.toStdString());
+//    m_currentWallet = new Wallet(w);
     return m_currentWallet;
 }
 
@@ -209,12 +208,12 @@ bool WalletManager::addressValid(const QString &address, bool testnet) const
 
 bool WalletManager::keyValid(const QString &key, const QString &address, bool isViewKey,  bool testnet) const
 {
-    std::string error;
-    if(!Monero::Wallet::keyValid(key.toStdString(), address.toStdString(), isViewKey, testnet, error)){
-        qDebug() << QString::fromStdString(error);
-        return false;
-    }
-    return true;
+//    std::string error;
+//    if(!Monero::Wallet::keyValid(key.toStdString(), address.toStdString(), isViewKey, testnet, error)){
+//        qDebug() << QString::fromStdString(error);
+//        return false;
+//    }
+    return false;
 }
 
 QString WalletManager::paymentIdFromAddress(const QString &address, bool testnet) const

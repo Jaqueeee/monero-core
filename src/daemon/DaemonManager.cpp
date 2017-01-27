@@ -1,3 +1,4 @@
+#ifndef Q_OS_IOS
 #include "DaemonManager.h"
 #include <QFile>
 #include <QFileInfo>
@@ -172,3 +173,4 @@ void DaemonManager::closing()
         m_daemon->waitForFinished(10000);
     }
 }
+#endif

@@ -29,8 +29,9 @@
 import QtQuick 2.0
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Layouts 1.1
 
-FocusScope {
+ColumnLayout {
     property alias password: password.text
     property alias placeholderText: password.placeholderText
     signal changed(string password)
@@ -39,9 +40,8 @@ FocusScope {
     TextField {
         id : password
         focus:true
-        anchors.fill: parent
-        horizontalAlignment: TextInput.AlignLeft
-        verticalAlignment: TextInput.AlignVCenter
+//        horizontalAlignment: TextInput.AlignLeft
+//        verticalAlignment: TextInput.AlignVCenter
         font.family: "Arial"
         font.pixelSize: 32
         echoMode: TextInput.Password
@@ -62,9 +62,7 @@ FocusScope {
     }
 
     Rectangle {
-        anchors.left: parent.left
-        anchors.right: parent.right
-        anchors.bottom: parent.bottom
+        Layout.fillWidth:true
         height: 1
         color: "#DBDBDB"
     }

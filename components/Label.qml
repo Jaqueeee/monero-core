@@ -33,6 +33,7 @@ Item {
     property alias text: label.text
     property alias color: label.color
     property alias textFormat: label.textFormat
+    property alias horizonalAlignment: label.horizontalAlignment
     property string tipText: ""
     property int fontSize: 12
     signal linkActivated()

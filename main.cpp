@@ -141,7 +141,7 @@ int main(int argc, char *argv[])
 //  backups - I reckon we save that in My Documents\Monero Accounts\ on
 //  Windows, ~/Monero Accounts/ on nix / osx
     bool isWindows = false;
-#ifdef Q_OS_WIN
+#ifdef Q_OS_WIN OR Q_OS_IOS
     isWindows = true;
     QStringList moneroAccountsRootDir = QStandardPaths::standardLocations(QStandardPaths::DocumentsLocation);
 #elif defined(Q_OS_UNIX)

@@ -33,7 +33,6 @@ HEADERS += \
     src/QR-Code-generator/BitBuffer.hpp \
     src/QR-Code-generator/QrCode.hpp \
     src/QR-Code-generator/QrSegment.hpp \
-    src/daemon/DaemonManager.h \
     src/model/AddressBookModel.h \
     src/libwalletqt/AddressBook.h \
     src/zxcvbn-c/zxcvbn.h \
@@ -57,11 +56,15 @@ SOURCES += main.cpp \
     src/QR-Code-generator/BitBuffer.cpp \
     src/QR-Code-generator/QrCode.cpp \
     src/QR-Code-generator/QrSegment.cpp \
-    src/daemon/DaemonManager.cpp \
     src/model/AddressBookModel.cpp \
     src/libwalletqt/AddressBook.cpp \
     src/zxcvbn-c/zxcvbn.c \
     src/libwalletqt/UnsignedTransaction.cpp
+
+!ios {
+#    HEADERS += src/daemon/DaemonManager.h
+#    SOURCES += src/daemon/DaemonManager.cpp
+}
 
 lupdate_only {
 SOURCES = *.qml \
@@ -71,10 +74,26 @@ SOURCES = *.qml \
           wizard/*js
 }
 
+
+ios:armv7 {
+    message("target is armv7")
+    LIBS += \
+#        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/arm64 \
+        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/armv7 \
+}
+ios:arm64 {
+    message("target is arm64")
+    LIBS += \
+        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/arm64 \
+#        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/armv7 \
+}
+!ios {
 LIBS += -L$$WALLET_ROOT/lib \
         -lwallet_merged \
          $$WALLET_ROOT/build/release/contrib/epee/src/libepee.a \
         -lunbound
+
+}
 ios {
     message("Host is IOS")
     LIBS+= \
@@ -82,6 +101,26 @@ ios {
         -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \
 #        -L/usr/local/opt/boost/lib \
         -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64 \
+}
+ios {
+    message("Host is IOS")
+    HEADERS += ZBarSDK.h
+
+    QMAKE_LFLAGS += -v
+    QMAKE_IOS_DEVICE_ARCHS = arm64
+    CONFIG += arm64
+    LIBS += -L$$WALLET_ROOT/lib-ios \
+        -lwallet_merged \
+         $$WALLET_ROOT/build/release/contrib/epee/src/libepee.a \ #TODO: make fat binary (armv7)
+        -lunbound
+    LIBS+= \
+#        -L/usr/local/lib \
+        -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \
+#        -L/usr/local/opt/boost/lib \
+        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/arm64 \
+#        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/armv7 \
+#        -L/Users/jacob/crypto/ofxiOSBoost/libs/boost/ios \
+#        -Lboost \
         -lboost_serialization \
         -lboost_thread \
         -lboost_system \
@@ -93,95 +132,95 @@ ios {
         -lssl \
         -lcrypto \
         -ldl
-
+}
 
 # currently we only support x86 build as qt.io only provides prebuilt qt for x86 mingw
 
-win32 {
+#win32 {
 
-    # Win64 Host settings
-    contains(QMAKE_HOST.arch, x86_64) {
-        message("Host is 64bit")
-        MSYS_PATH=c:/msys64/mingw32
+#    # Win64 Host settings
+#    contains(QMAKE_HOST.arch, x86_64) {
+#        message("Host is 64bit")
+#        MSYS_PATH=c:/msys64/mingw32
 
-        # boost root path
-        BOOST_PATH=c:/msys64/mingw64/boost
+#        # boost root path
+#        BOOST_PATH=c:/msys64/mingw64/boost
 
-    # WIN32 Host settings
-    } else {
-        message("Host is 32bit")
-        MSYS_PATH=c:/msys32/mingw32
+#    # WIN32 Host settings
+#    } else {
+#        message("Host is 32bit")
+#        MSYS_PATH=c:/msys32/mingw32
 
-        # boost root path
-        BOOST_PATH=c:/msys32/mingw32/boost
+#        # boost root path
+#        BOOST_PATH=c:/msys32/mingw32/boost
 
-    }
+#    }
 
-    LIBS+=-L$$MSYS_PATH/lib
-    LIBS+=-L$$BOOST_PATH/lib
+#    LIBS+=-L$$MSYS_PATH/lib
+#    LIBS+=-L$$BOOST_PATH/lib
     
-    LIBS+= \
-        -Wl,-Bstatic \
-        -lboost_serialization-mt-s \
-        -lboost_thread-mt-s \
-        -lboost_system-mt-s \
-        -lboost_date_time-mt-s \
-        -lboost_filesystem-mt-s \
-        -lboost_regex-mt-s \
-        -lboost_chrono-mt-s \
-        -lboost_program_options-mt-s \
-        -lssl \
-        -lcrypto \
-        -Wl,-Bdynamic \
-        -lws2_32 \
-        -lwsock32 \
-        -lIphlpapi \
-        -lgdi32
+#    LIBS+= \
+#        -Wl,-Bstatic \
+#        -lboost_serialization-mt-s \
+#        -lboost_thread-mt-s \
+#        -lboost_system-mt-s \
+#        -lboost_date_time-mt-s \
+#        -lboost_filesystem-mt-s \
+#        -lboost_regex-mt-s \
+#        -lboost_chrono-mt-s \
+#        -lboost_program_options-mt-s \
+#        -lssl \
+#        -lcrypto \
+#        -Wl,-Bdynamic \
+#        -lws2_32 \
+#        -lwsock32 \
+#        -lIphlpapi \
+#        -lgdi32
     
-    !contains(QMAKE_TARGET.arch, x86_64) {
-        message("Target is 32bit")
-        ## Windows x86 (32bit) specific build here
-        ## there's 2Mb stack in libwallet allocated internally, so we set stack=4Mb
-        ## this fixes app crash for x86 Windows build
-        QMAKE_LFLAGS += -Wl,--stack,4194304
-    } else {
-        message("Target is 64bit")
-    }
+#    !contains(QMAKE_TARGET.arch, x86_64) {
+#        message("Target is 32bit")
+#        ## Windows x86 (32bit) specific build here
+#        ## there's 2Mb stack in libwallet allocated internally, so we set stack=4Mb
+#        ## this fixes app crash for x86 Windows build
+#        QMAKE_LFLAGS += -Wl,--stack,4194304
+#    } else {
+#        message("Target is 64bit")
+#    }
 
-}
+#}
 
-linux {
-    CONFIG(static) {
-        message("using static libraries")
-        LIBS+= -Wl,-Bstatic    
-    }
-    LIBS+= \
-        -lboost_serialization \
-        -lboost_thread \
-        -lboost_system \
-        -lboost_date_time \
-        -lboost_filesystem \
-        -lboost_regex \
-        -lboost_chrono \
-        -lboost_program_options \
-        -lssl \
-        -lcrypto \
-        -Wl,-Bdynamic \
-        -ldl
-    # currently monero has an issue with "static" build and linunwind-dev,
-    # so we link libunwind-dev only for non-Ubuntu distros
-    CONFIG(libunwind_off) {
-        message(Building without libunwind)
-    } else {
-        message(Building with libunwind)
-        LIBS += -Wl,-Bdynamic -lunwind
-    }
+#linux {
+#    CONFIG(static) {
+#        message("using static libraries")
+#        LIBS+= -Wl,-Bstatic
+#    }
+#    LIBS+= \
+#        -lboost_serialization \
+#        -lboost_thread \
+#        -lboost_system \
+#        -lboost_date_time \
+#        -lboost_filesystem \
+#        -lboost_regex \
+#        -lboost_chrono \
+#        -lboost_program_options \
+#        -lssl \
+#        -lcrypto \
+#        -Wl,-Bdynamic \
+#        -ldl
+#    # currently monero has an issue with "static" build and linunwind-dev,
+#    # so we link libunwind-dev only for non-Ubuntu distros
+#    CONFIG(libunwind_off) {
+#        message(Building without libunwind)
+#    } else {
+#        message(Building with libunwind)
+#        LIBS += -Wl,-Bdynamic -lunwind
+#    }
     
 
-    QMAKE_LFLAGS_RPATH=
-    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN/libs\'"
+#    QMAKE_LFLAGS_RPATH=
+#    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN/libs\'"
     
-}
+#}
 
 macx {
     # mixing static and shared libs are not supported on mac
@@ -205,24 +244,9 @@ macx {
         -lcrypto \
         -ldl
 
-#    LIBS+= \
-#        -L/usr/local/lib \
-#        -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \
-##        -L/usr/local/opt/boost/lib \
-#        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64 \
-#        -lboost_serialization \
-#        -lboost_thread \
-#        -lboost_system \
-#        -lboost_date_time \
-#        -lboost_filesystem \
-#        -lboost_regex \
-#        -lboost_chrono \
-#        -lboost_program_options \
-#        -lssl \
-#        -lcrypto \
-#        -ldl
-
 }
+
+
 
 
 # translation stuff
