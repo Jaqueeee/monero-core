@@ -210,7 +210,7 @@ Rectangle {
         console.log("Mining page loaded");
 
         update()
-        timer.running = true
+        timer.running = isDaemonLocal()
 
     }
     function onPageClosed() {
