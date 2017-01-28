@@ -262,9 +262,11 @@ ApplicationWindow {
         return path.replace(/.*[\/\\]/, '').replace(/\.keys$/, '')
     }
 
-    function onWalletConnectionStatusChanged(){
+    function onWalletConnectionStatusChanged(status){
         console.log("Wallet connection status changed")
-        middlePanel.updateStatus();
+        middlePanel.updateStatus(status);
+        leftPanel.networkStatus.connected = status
+        leftPanel.progressBar.visible = (status === Wallet.ConnectionStatus_Connected)
     }
 
     function onWalletOpened(wallet) {

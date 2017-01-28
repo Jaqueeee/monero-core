@@ -62,8 +62,8 @@ SOURCES += main.cpp \
     src/libwalletqt/UnsignedTransaction.cpp
 
 !ios {
-#    HEADERS += src/daemon/DaemonManager.h
-#    SOURCES += src/daemon/DaemonManager.cpp
+    HEADERS += src/daemon/DaemonManager.h
+    SOURCES += src/daemon/DaemonManager.cpp
 }
 
 lupdate_only {
@@ -90,29 +90,22 @@ ios:arm64 {
 !ios {
 LIBS += -L$$WALLET_ROOT/lib \
         -lwallet_merged \
-         $$WALLET_ROOT/build/release/contrib/epee/src/libepee.a \
+        -lepee \
         -lunbound
-
 }
 ios {
     message("Host is IOS")
-    LIBS+= \
-        -L/usr/local/lib \
-        -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \
-#        -L/usr/local/opt/boost/lib \
-        -L/Users/jacob/crypto/ofxiOSBoost/build/libs/boost/lib/x86_64 \
-}
-ios {
-    message("Host is IOS")
-    HEADERS += ZBarSDK.h
+#    HEADERS += ZBarSDK.h
 
     QMAKE_LFLAGS += -v
     QMAKE_IOS_DEVICE_ARCHS = arm64
     CONFIG += arm64
     LIBS += -L$$WALLET_ROOT/lib-ios \
         -lwallet_merged \
-         $$WALLET_ROOT/build/release/contrib/epee/src/libepee.a \ #TODO: make fat binary (armv7)
+         $$WALLET_ROOT/lib-ios/libepee-arm64.a \ #TODO: make fat binary (armv7)
+        -lepee \
         -lunbound
+
     LIBS+= \
 #        -L/usr/local/lib \
         -L/Users/jacob/crypto/OpenSSL-for-iPhone/lib \

@@ -237,7 +237,7 @@ signals:
     // emitted when transaction is created async
     void transactionCreated(PendingTransaction * transaction, QString address, QString paymentId, quint32 mixinCount);
 
-    void connectionStatusChanged() const;
+    void connectionStatusChanged(ConnectionStatus status) const;
 
 private:
     Wallet(QObject * parent = nullptr);

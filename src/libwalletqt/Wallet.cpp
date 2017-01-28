@@ -111,7 +111,7 @@ Wallet::ConnectionStatus Wallet::connected() const
         ConnectionStatus newStatus = static_cast<ConnectionStatus>(m_walletImpl->connected());
         if (newStatus != m_connectionStatus) {
             m_connectionStatus = newStatus;
-            emit connectionStatusChanged();
+            emit connectionStatusChanged(newStatus);
         }
         m_connectionStatusTime.restart();
     }
