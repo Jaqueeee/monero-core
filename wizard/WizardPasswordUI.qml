@@ -60,7 +60,8 @@ ColumnLayout {
     WizardPasswordInput {
         id: passwordItem
         Layout.fillWidth: true
-        Layout.preferredWidth: 300
+        Layout.maximumWidth: 300
+        Layout.minimumWidth: 200
         placeholderText : qsTr("Password") + translationManager.emptyString;
         KeyNavigation.tab: retypePasswordItem
         onChanged: handlePassword()
@@ -70,7 +71,8 @@ ColumnLayout {
     WizardPasswordInput {
         id: retypePasswordItem
         Layout.fillWidth: true
-        Layout.preferredWidth: 300
+        Layout.maximumWidth: 300
+        Layout.minimumWidth: 200
         placeholderText : qsTr("Confirm password") + translationManager.emptyString;
         KeyNavigation.tab: passwordItem
         onChanged: handlePassword()

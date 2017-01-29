@@ -252,8 +252,6 @@ ColumnLayout {
         Layout.leftMargin: wizardLeftMargin
         Layout.rightMargin: wizardRightMargin
         Layout.alignment: Qt.AlignCenter
-        spacing: 5
-
 
 
         Label {
@@ -264,11 +262,17 @@ ColumnLayout {
                   + translationManager.emptyString
         }
 
-        RowLayout {
-            spacing: 20
+        GridLayout {
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignHCenter
+
+            columnSpacing: 20
+            rowSpacing: 20
+            flow: isMobile ? GridLayout.TopToBottom : GridLayout.LeftToRight
             LineEdit {
                 id: daemonAddress
-                width: 200
+                Layout.maximumWidth: 200
+                Layout.minimumWidth: 200
                 fontSize: 14
                 text: {
                     if(appWindow.persistentSettings.daemon_address)
@@ -280,7 +284,6 @@ ColumnLayout {
 
             CheckBox {
                 id: testNet
-                anchors.verticalCenter: parent.verticalCenter
                 text: qsTr("Testnet") + translationManager.emptyString
                 background: "#F0EEEE"
                 fontColor: "#4A4646"

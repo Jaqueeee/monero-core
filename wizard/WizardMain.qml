@@ -43,7 +43,7 @@ ColumnLayout {
     property int wizardLeftMargin: (!isMobile) ?  150 : 25
     property int wizardRightMargin: (!isMobile) ? 150 : 25
     property int wizardBottomMargin: (isMobile) ? 150 : 25
-    property int wizardTopMargin: (isMobile) ? 25 : 50
+    property int wizardTopMargin: (isMobile) ? 15 : 50
 
     property var paths: {
      //   "create_wallet" : [welcomePage, optionsPage, createWalletPage, passwordPage, donationPage, finishPage ],
@@ -97,8 +97,8 @@ ColumnLayout {
             currentPage += step_value
             pages[currentPage].opacity = 1;
 
-            var nextButtonVisible = pages[currentPage] !== optionsPage && currentPage < pages.length - 1;
-            nextButton.visible = nextButtonVisible;
+            var nextButtonVisible = currentPage > 1 && currentPage < pages.length - 1
+            nextButton.visible = nextButtonVisible
 
             if (typeof pages[currentPage].onPageOpened !== 'undefined') {
                 pages[currentPage].onPageOpened(settings,next)
@@ -234,7 +234,7 @@ ColumnLayout {
 
     WizardWelcome {
         id: welcomePage
-        Layout.bottomMargin: wizardBottomMargin
+//        Layout.bottomMargin: wizardBottomMargin
         Layout.topMargin: wizardTopMargin
 
     }
@@ -290,8 +290,8 @@ ColumnLayout {
         anchors.bottom: (isMobile) ? parent.bottom : undefined
         anchors.top: undefined
         anchors.left: parent.left
-        anchors.bottomMargin: 50
-        anchors.leftMargin: 50
+        anchors.leftMargin: isMobile ?  20 :  50
+        anchors.bottomMargin: isMobile ?  20 :  50
         visible: parent.currentPage > 0
 
         width: 50; height: 50
@@ -318,10 +318,9 @@ ColumnLayout {
         anchors.bottom: (isMobile) ? parent.bottom : undefined
         anchors.top: undefined
         anchors.right: parent.right
-        anchors.rightMargin: 50
-        anchors.bottomMargin: 50
-
-        visible: wizard.currentPage !== 1 && wizard.currentPage !== 6
+        anchors.rightMargin: isMobile ?  20 :  50
+        anchors.bottomMargin: isMobile ?  20 :  50
+        visible: currentPage > 1 && currentPage < pages.length - 1
         width: 50; height: 50
         radius: 25
         color: enabled ? nextArea.containsMouse ? "#FF4304" : "#FF6C3C" : "#DBDBDB"

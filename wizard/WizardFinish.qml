@@ -31,6 +31,8 @@ import QtQuick.Layouts 1.1
 
 
 ColumnLayout {
+    Layout.leftMargin: wizardLeftMargin
+    Layout.rightMargin: wizardRightMargin
     opacity: 0
     visible: false
     Behavior on opacity {
@@ -72,9 +74,15 @@ ColumnLayout {
     }
 
     function updateSettingsSummary() {
-        settingsText.text = qsTr("New wallet details:") + translationManager.emptyString
-                            + "<br>"
-                            + buildSettingsString();
+        if (!isMobile){
+            settingsText.text = qsTr("New wallet details:") + translationManager.emptyString
+                                + "<br>"
+                                + buildSettingsString();
+        } else {
+            settingsText.text = qsTr("Don't forget to write down your seed. You can view your seed and change your settings on settings page.")
+        }
+
+
     }
 
     function onPageOpened(settings) {
@@ -85,7 +93,6 @@ ColumnLayout {
 
     RowLayout {
         id: dotsRow
-        Layout.topMargin: 25
         Layout.alignment: Qt.AlignRight
 
         ListModel {
@@ -108,9 +115,7 @@ ColumnLayout {
 
     ColumnLayout {
         id: headerColumn
-        Layout.leftMargin: wizardLeftMargin
-        Layout.rightMargin: wizardRightMargin
-        Layout.fillWidth:true
+        Layout.fillWidth: true
 
         Text {
             Layout.fillWidth: true
@@ -124,11 +129,8 @@ ColumnLayout {
         }
 
         Text {
-            id: settingsText
-            Layout.minimumWidth: 300
             Layout.fillWidth: true
-            anchors.left: parent.left
-            anchors.right: parent.right
+            id: settingsText
             font.family: "Arial"
             font.pixelSize: 16
             wrapMode: Text.Wrap
