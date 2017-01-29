@@ -129,91 +129,91 @@ ios {
 
 # currently we only support x86 build as qt.io only provides prebuilt qt for x86 mingw
 
-#win32 {
+win32 {
 
-#    # Win64 Host settings
-#    contains(QMAKE_HOST.arch, x86_64) {
-#        message("Host is 64bit")
-#        MSYS_PATH=c:/msys64/mingw32
+    # Win64 Host settings
+    contains(QMAKE_HOST.arch, x86_64) {
+        message("Host is 64bit")
+        MSYS_PATH=c:/msys64/mingw32
 
-#        # boost root path
-#        BOOST_PATH=c:/msys64/mingw64/boost
+        # boost root path
+        BOOST_PATH=c:/msys64/mingw64/boost
 
-#    # WIN32 Host settings
-#    } else {
-#        message("Host is 32bit")
-#        MSYS_PATH=c:/msys32/mingw32
+    # WIN32 Host settings
+    } else {
+        message("Host is 32bit")
+        MSYS_PATH=c:/msys32/mingw32
 
-#        # boost root path
-#        BOOST_PATH=c:/msys32/mingw32/boost
+        # boost root path
+        BOOST_PATH=c:/msys32/mingw32/boost
 
-#    }
+    }
 
-#    LIBS+=-L$$MSYS_PATH/lib
-#    LIBS+=-L$$BOOST_PATH/lib
+    LIBS+=-L$$MSYS_PATH/lib
+    LIBS+=-L$$BOOST_PATH/lib
     
-#    LIBS+= \
-#        -Wl,-Bstatic \
-#        -lboost_serialization-mt-s \
-#        -lboost_thread-mt-s \
-#        -lboost_system-mt-s \
-#        -lboost_date_time-mt-s \
-#        -lboost_filesystem-mt-s \
-#        -lboost_regex-mt-s \
-#        -lboost_chrono-mt-s \
-#        -lboost_program_options-mt-s \
-#        -lssl \
-#        -lcrypto \
-#        -Wl,-Bdynamic \
-#        -lws2_32 \
-#        -lwsock32 \
-#        -lIphlpapi \
-#        -lgdi32
+    LIBS+= \
+        -Wl,-Bstatic \
+        -lboost_serialization-mt-s \
+        -lboost_thread-mt-s \
+        -lboost_system-mt-s \
+        -lboost_date_time-mt-s \
+        -lboost_filesystem-mt-s \
+        -lboost_regex-mt-s \
+        -lboost_chrono-mt-s \
+        -lboost_program_options-mt-s \
+        -lssl \
+        -lcrypto \
+        -Wl,-Bdynamic \
+        -lws2_32 \
+        -lwsock32 \
+        -lIphlpapi \
+        -lgdi32
     
-#    !contains(QMAKE_TARGET.arch, x86_64) {
-#        message("Target is 32bit")
-#        ## Windows x86 (32bit) specific build here
-#        ## there's 2Mb stack in libwallet allocated internally, so we set stack=4Mb
-#        ## this fixes app crash for x86 Windows build
-#        QMAKE_LFLAGS += -Wl,--stack,4194304
-#    } else {
-#        message("Target is 64bit")
-#    }
+    !contains(QMAKE_TARGET.arch, x86_64) {
+        message("Target is 32bit")
+        ## Windows x86 (32bit) specific build here
+        ## there's 2Mb stack in libwallet allocated internally, so we set stack=4Mb
+        ## this fixes app crash for x86 Windows build
+        QMAKE_LFLAGS += -Wl,--stack,4194304
+    } else {
+        message("Target is 64bit")
+    }
 
-#}
+}
 
-#linux {
-#    CONFIG(static) {
-#        message("using static libraries")
-#        LIBS+= -Wl,-Bstatic
-#    }
-#    LIBS+= \
-#        -lboost_serialization \
-#        -lboost_thread \
-#        -lboost_system \
-#        -lboost_date_time \
-#        -lboost_filesystem \
-#        -lboost_regex \
-#        -lboost_chrono \
-#        -lboost_program_options \
-#        -lssl \
-#        -lcrypto \
-#        -Wl,-Bdynamic \
-#        -ldl
-#    # currently monero has an issue with "static" build and linunwind-dev,
-#    # so we link libunwind-dev only for non-Ubuntu distros
-#    CONFIG(libunwind_off) {
-#        message(Building without libunwind)
-#    } else {
-#        message(Building with libunwind)
-#        LIBS += -Wl,-Bdynamic -lunwind
-#    }
+linux {
+    CONFIG(static) {
+        message("using static libraries")
+        LIBS+= -Wl,-Bstatic
+    }
+    LIBS+= \
+        -lboost_serialization \
+        -lboost_thread \
+        -lboost_system \
+        -lboost_date_time \
+        -lboost_filesystem \
+        -lboost_regex \
+        -lboost_chrono \
+        -lboost_program_options \
+        -lssl \
+        -lcrypto \
+        -Wl,-Bdynamic \
+        -ldl
+    # currently monero has an issue with "static" build and linunwind-dev,
+    # so we link libunwind-dev only for non-Ubuntu distros
+    CONFIG(libunwind_off) {
+        message(Building without libunwind)
+    } else {
+        message(Building with libunwind)
+        LIBS += -Wl,-Bdynamic -lunwind
+    }
     
 
-#    QMAKE_LFLAGS_RPATH=
-#    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN/libs\'"
+    QMAKE_LFLAGS_RPATH=
+    QMAKE_LFLAGS += "-Wl,-rpath,\'\$$ORIGIN/libs\'"
     
-#}
+}
 
 macx {
     # mixing static and shared libs are not supported on mac
@@ -240,8 +240,6 @@ macx {
 }
 
 
-
-
 # translation stuff
 TRANSLATIONS =  \ # English is default language, no explicit translation file
                 $$PWD/translations/monero-core_ar.ts \ # Arabic
@@ -259,12 +257,12 @@ TRANSLATIONS =  \ # English is default language, no explicit translation file
 CONFIG(release, debug|release) {
     DESTDIR = release/bin
     LANGUPD_OPTIONS = -locations relative -no-ui-lines
-#    LANGREL_OPTIONS = -compress -nounfinished -removeidentical
+    LANGREL_OPTIONS = -compress -nounfinished -removeidentical
 
 } else {
     DESTDIR = debug/bin
     LANGUPD_OPTIONS =
-#    LANGREL_OPTIONS = -markuntranslated "MISS_TR "
+    LANGREL_OPTIONS = -markuntranslated "MISS_TR "
 }
 
 TARGET_FULL_PATH = $$OUT_PWD/$$DESTDIR
@@ -276,31 +274,35 @@ macx {
 }
 
 
+!ios {
+    isEmpty(QMAKE_LUPDATE) {
+        win32:LANGUPD = $$[QT_INSTALL_BINS]\lupdate.exe
+        else:LANGUPD = $$[QT_INSTALL_BINS]/lupdate
+    }
 
-isEmpty(QMAKE_LUPDATE) {
-#    win32:LANGUPD = $$[QT_INSTALL_BINS]\lupdate.exe
-#    else:LANGUPD = $$[QT_INSTALL_BINS]/lupdate
+    isEmpty(QMAKE_LRELEASE) {
+        win32:LANGREL = $$[QT_INSTALL_BINS]\lrelease.exe
+        else:LANGREL = $$[QT_INSTALL_BINS]/lrelease
+    }
+
+    langupd.command = \
+        $$LANGUPD $$LANGUPD_OPTIONS $$shell_path($$_PRO_FILE) -ts $$_PRO_FILE_PWD/$$TRANSLATIONS
+
+
+
+    langrel.depends = langupd
+    langrel.input = TRANSLATIONS
+    langrel.output = $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
+    langrel.commands = \
+        $$LANGREL $$LANGREL_OPTIONS ${QMAKE_FILE_IN} -qm $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
+    langrel.CONFIG += no_link
+
+    QMAKE_EXTRA_TARGETS += langupd deploy deploy_win
+    QMAKE_EXTRA_COMPILERS += langrel
 }
 
-isEmpty(QMAKE_LRELEASE) {
-#    win32:LANGREL = $$[QT_INSTALL_BINS]\lrelease.exe
-#    else:LANGREL = $$[QT_INSTALL_BINS]/lrelease
-}
-
-#langupd.command = \
-#    $$LANGUPD $$LANGUPD_OPTIONS $$shell_path($$_PRO_FILE) -ts $$_PRO_FILE_PWD/$$TRANSLATIONS
 
 
-
-#langrel.depends = langupd
-#langrel.input = TRANSLATIONS
-#langrel.output = $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
-#langrel.commands = \
-#    $$LANGREL $$LANGREL_OPTIONS ${QMAKE_FILE_IN} -qm $$TRANSLATION_TARGET_DIR/${QMAKE_FILE_BASE}.qm
-#langrel.CONFIG += no_link
-
-QMAKE_EXTRA_TARGETS += langupd deploy deploy_win
-#QMAKE_EXTRA_COMPILERS += langrel
 
 
 
@@ -309,7 +311,7 @@ QMAKE_EXTRA_TARGETS += langupd deploy deploy_win
 # by invoking 'get_libwallet_api.sh Debug'
 # so we update translations everytime even for debug build
 
-#PRE_TARGETDEPS += langupd compiler_langrel_make_all
+PRE_TARGETDEPS += langupd compiler_langrel_make_all
 
 RESOURCES += qml.qrc
 
