@@ -434,10 +434,11 @@ Rectangle {
             color: "#DEDEDE"
         }
 
-        RowLayout {
+        GridLayout {
+            columns: (isMobile) ? 2 : 6
             StandardButton {
                 id: sweepUnmixableButton
-                text: qsTr("SWEEP UNMIXABLE") + translationManager.emptyString
+                text: qsTr("Sweep Unmixable") + translationManager.emptyString
                 shadowReleasedColor: "#FF4304"
                 shadowPressedColor: "#B32D00"
                 releasedColor: "#FF6C3C"
@@ -649,6 +650,8 @@ Rectangle {
     function onPageCompleted() {
         console.log("transfer page loaded")
         updateStatus();
+        // Enable scrolling
+//        mainFlickable.contentHeight = root.height + 200
     }
 
     //TODO: Add daemon sync status
