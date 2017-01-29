@@ -89,7 +89,7 @@ Item {
         font.pixelSize: button.fontSize
         color: parent.textColor
         visible: parent.icon === ""
-        font.capitalization : Font.AllUppercase
+        font.capitalization : Font.Capitalize
     }
 
     Image {

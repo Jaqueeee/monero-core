@@ -27,6 +27,7 @@
 // THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 import QtQuick 2.0
+import QtQuick.Layouts 1.1
 
 Item {
     id: item
@@ -36,19 +37,24 @@ Item {
     property alias horizonalAlignment: label.horizontalAlignment
     property string tipText: ""
     property int fontSize: 12
+    property alias wrapMode: label.wrapMode
     signal linkActivated()
-    width: icon.x + icon.width
+//    width: icon.x + icon.width
     height: icon.height
+    Layout.fillWidth: true
 
     Text {
         id: label
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 2
         anchors.left: parent.left
+        anchors.right: parent.right
         font.family: "Arial"
         font.pixelSize: parent.fontSize
         color: "#555555"
         onLinkActivated: item.linkActivated()
+        Layout.fillWidth: true
+        wrapMode: Text.Wrap
     }
 
     Image {
