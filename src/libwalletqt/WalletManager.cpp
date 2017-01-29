@@ -39,6 +39,7 @@ Wallet *WalletManager::createWallet(const QString &path, const QString &password
 
 Wallet *WalletManager::openWallet(const QString &path, const QString &password, bool testnet)
 {
+    qDebug("open wallet called");
     QMutexLocker locker(&m_mutex);
     if (m_currentWallet) {
         qDebug() << "Closing open m_currentWallet" << m_currentWallet;
@@ -124,7 +125,6 @@ QString WalletManager::closeWallet()
 void WalletManager::closeWalletAsync()
 {
 
-    emit walletClosed(closeWallet());
     QFuture<QString> future = QtConcurrent::run(this, &WalletManager::closeWallet);
     QFutureWatcher<QString> * watcher = new QFutureWatcher<QString>();
 
@@ -238,6 +238,7 @@ void WalletManager::setDaemonAddress(const QString &address)
 
 bool WalletManager::connected() const
 {
+    qDebug() << "walletmanager connected status";
     return m_pimpl->connected();
 }
 
@@ -263,7 +264,24 @@ double WalletManager::miningHashRate() const
 
 bool WalletManager::isMining() const
 {
+    if(!m_currentWallet->connected()) {
+        return false;
+    }
+    qDebug() << "checking mining status";
     return m_pimpl->isMining();
+//    // Update mining status in separate thread
+//    QFuture<bool> future = QtConcurrent::run(m_pimpl, &Monero::WalletManager::isMining);
+//    QFutureWatcher<bool> * watcher = new QFutureWatcher<bool>();
+//    connect(watcher, &QFutureWatcher<bool>::finished,
+//            this, [this, watcher]() {
+//        QFuture<bool> future = watcher->future();
+//        watcher->deleteLater();
+//        qDebug() << "mining status updated";
+//        m_isMining = future.result();
+//    });
+//    watcher->setFuture(future);
+
+    return m_isMining;
 }
 
 bool WalletManager::startMining(const QString &address, quint32 threads)
@@ -278,6 +296,7 @@ bool WalletManager::stopMining()
 
 QString WalletManager::resolveOpenAlias(const QString &address) const
 {
+    qDebug() << "resolving open alias";
     bool dnssec_valid = false;
     std::string res = m_pimpl->resolveOpenAlias(address.toStdString(), dnssec_valid);
     res = std::string(dnssec_valid ? "true" : "false") + "|" + res;
@@ -332,7 +351,7 @@ bool WalletManager::saveQrCode(const QString &code, const QString &path) const
     return QRCodeImageProvider::genQrImage(code, &size).scaled(size.expandedTo(QSize(240, 240)), Qt::KeepAspectRatio).save(path, "PNG", 100);
 }
 
-WalletManager::WalletManager(QObject *parent) : QObject(parent)
+WalletManager::WalletManager(QObject *parent) : QObject(parent), m_isMining(false)
 {
     m_pimpl =  Monero::WalletManagerFactory::getWalletManager();
 }

@@ -148,6 +148,7 @@ private:
     Monero::WalletManager * m_pimpl;
     QMutex m_mutex;
     QPointer<Wallet> m_currentWallet;
+    mutable bool m_isMining;
 
 };
 

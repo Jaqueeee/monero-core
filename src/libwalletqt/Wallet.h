@@ -3,6 +3,8 @@
 
 #include <QObject>
 #include <QTime>
+#include <QMutex>
+#include <QtConcurrent/QtConcurrent>
 
 #include "wallet/wallet2_api.h" // we need to have an access to the Monero::Wallet::Status enum here;
 #include "PendingTransaction.h" // we need to have an access to the PendingTransaction::Priority enum here;
@@ -75,7 +77,8 @@ public:
     bool testnet() const;
 
     //! returns whether the wallet is connected, and version status
-    ConnectionStatus connected() const;
+    ConnectionStatus connected(bool forceCheck = false);
+    void updateConnectionStatusAsync();
 
     //! returns true if wallet was ever synchronized
     bool synchronized() const;
@@ -98,10 +101,10 @@ public:
     Q_INVOKABLE bool store(const QString &path = "");
 
     //! initializes wallet
-    Q_INVOKABLE bool init(const QString &daemonAddress, quint64 upperTransactionLimit, bool isRecovering = false, quint64 restoreHeight = 0);
+    Q_INVOKABLE bool init(const QString &daemonAddress, quint64 upperTransactionLimit = 0, bool isRecovering = false, quint64 restoreHeight = 0);
 
     //! initializes wallet asynchronously
-    Q_INVOKABLE void initAsync(const QString &daemonAddress, quint64 upperTransactionLimit, bool isRecovering = false, quint64 restoreHeight = 0);
+    Q_INVOKABLE void initAsync(const QString &daemonAddress, quint64 upperTransactionLimit = 0, bool isRecovering = false, quint64 restoreHeight = 0);
 
     //! create a view only wallet
     Q_INVOKABLE bool createViewOnly(const QString &path, const QString &password) const;
@@ -266,6 +269,9 @@ private:
     mutable bool    m_initialized;
     AddressBook * m_addressBook;
     mutable AddressBookModel * m_addressBookModel;
+    QMutex m_connectionStatusMutex;
+    QFutureWatcher<Monero::Wallet::ConnectionStatus> * m_connectionWatcher;
+    bool m_connectionStatusRunning;
 };
 
 
