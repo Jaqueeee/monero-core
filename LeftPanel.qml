@@ -71,6 +71,7 @@ Rectangle {
 
     // Item with monero logo
     Item {
+        visible: !isMobile
         id: logoItem
         anchors.left: parent.left
         anchors.right: parent.right
@@ -102,7 +103,9 @@ Rectangle {
     }
 
 
+
     Column {
+        visible: !isMobile
         id: column1
         anchors.left: parent.left
         anchors.right: parent.right
@@ -181,6 +184,7 @@ Rectangle {
         }
     }
 
+
     Rectangle {
         anchors.top: parent.top
         anchors.left: parent.left
@@ -197,16 +201,26 @@ Rectangle {
         color: "#DBDBDB"
     }
 
+
+
     Rectangle {
         id: menuRect
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        anchors.top: column1.bottom
+        anchors.top: parent.top
         anchors.topMargin: 50
         color: "#1C1C1C"
 
+
+        Flickable {
+            contentHeight: 500
+            anchors.fill: parent
+            clip: true
+
+
         Column {
+
             id: menuColumn
             anchors.left: parent.left
             anchors.right: parent.right
@@ -445,6 +459,8 @@ Rectangle {
 
         }
 
+        }
+
         NetworkStatusItem {
             id: networkStatus
             anchors.left: parent.left
@@ -460,6 +476,9 @@ Rectangle {
             anchors.bottom: parent.bottom
         }
     }
+
+
+
     // indicate disabled state
 //    Desaturate {
 //        anchors.fill: parent

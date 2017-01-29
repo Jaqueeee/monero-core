@@ -29,6 +29,7 @@
 
 import QtQml 2.0
 import QtQuick 2.2
+import QtQuick.Controls 2.0
 import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.1
 import QtGraphicalEffects 1.0
@@ -41,10 +42,11 @@ Rectangle {
 
     property Item currentView
     property Item previousView
-    property bool basicMode : false
+    property bool basicMode : isMobile
     property string balanceLabelText: qsTr("Balance")
     property string balanceText
     property string unlockedBalanceText
+    property int minHeight: 800
 
     property Transfer transferView: Transfer { }
     property Receive receiveView: Receive { }
@@ -72,7 +74,6 @@ Rectangle {
         previousView = currentView
         if (currentView) {
             stackView.replace(currentView)
-
             // Component.onCompleted is called before wallet is initilized
             if (typeof currentView.onPageCompleted === "function") {
                 currentView.onPageCompleted();
@@ -125,27 +126,35 @@ Rectangle {
                 name: "History"
                 PropertyChanges { target: root; currentView: historyView }
                 PropertyChanges { target: historyView; model: appWindow.currentWallet ? appWindow.currentWallet.historyModel : null }
+                PropertyChanges { target: mainFlickable; contentHeight: minHeight }
             }, State {
                 name: "Transfer"
                 PropertyChanges { target: root; currentView: transferView }
+                PropertyChanges { target: mainFlickable; contentHeight: 1000 }
             }, State {
                name: "Receive"
                PropertyChanges { target: root; currentView: receiveView }
+               PropertyChanges { target: mainFlickable; contentHeight: minHeight }
             }, State {
                name: "TxKey"
                PropertyChanges { target: root; currentView: txkeyView }
+               PropertyChanges { target: mainFlickable; contentHeight: minHeight  }
             }, State {
                 name: "AddressBook"
                 PropertyChanges {  target: root; currentView: addressBookView  }
+                PropertyChanges { target: mainFlickable; contentHeight: minHeight }
             }, State {
                 name: "Sign"
                PropertyChanges { target: root; currentView: signView }
+               PropertyChanges { target: mainFlickable; contentHeight: minHeight  }
             }, State {
                 name: "Settings"
                PropertyChanges { target: root; currentView: settingsView }
+               PropertyChanges { target: mainFlickable; contentHeight: 1200 }
             }, State {
                 name: "Mining"
                 PropertyChanges { target: root; currentView: miningView }
+                PropertyChanges { target: mainFlickable; contentHeight: minHeight  }
             }
         ]
 
@@ -274,36 +283,46 @@ Rectangle {
                 color: "#DBDBDB"
             }
         }
-
-        // Views container
-        StackView {
-            id: stackView
-            initialItem: transferView
-            anchors.topMargin: 30
+        Flickable {
+            id: mainFlickable
             Layout.fillWidth: true
             Layout.fillHeight: true
-            anchors.margins: 4
-            clip: true // otherwise animation will affect left panel
+            clip: true
+            ScrollIndicator.vertical: ScrollIndicator { }
+            ScrollBar.vertical: ScrollBar { }       // uncomment to test
 
-            delegate: StackViewDelegate {
-                pushTransition: StackViewTransition {
-                    PropertyAnimation {
-                        target: enterItem
-                        property: "x"
-                        from: 0 - target.width
-                        to: 0
-                        duration: 300
-                    }
-                    PropertyAnimation {
-                        target: exitItem
-                        property: "x"
-                        from: 0
-                        to: target.width
-                        duration: 300
+            // Views container
+            StackView {
+                id: stackView
+                initialItem: transferView
+    //            anchors.topMargin: 30
+    //                Layout.fillWidth: true
+    //                Layout.fillHeight: true
+                anchors.fill:parent
+    //            anchors.margins: 4
+                clip: true // otherwise animation will affect left panel
+
+                delegate: StackViewDelegate {
+                    pushTransition: StackViewTransition {
+                        PropertyAnimation {
+                            target: enterItem
+                            property: "x"
+                            from: 0 - target.width
+                            to: 0
+                            duration: 300
+                        }
+                        PropertyAnimation {
+                            target: exitItem
+                            property: "x"
+                            from: 0
+                            to: target.width
+                            duration: 300
+                        }
                     }
                 }
             }
-        }
+
+        }// flickable
     }
     // border
     Rectangle {
