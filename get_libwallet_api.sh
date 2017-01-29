@@ -113,7 +113,7 @@ fi
 
 
 echo "cleaning up existing monero build dir, libs and includes"
-#rm -fr $MONERO_DIR/build
+rm -fr $MONERO_DIR/build
 rm -fr $MONERO_DIR/lib
 rm -fr $MONERO_DIR/include
 rm -fr $MONERO_DIR/bin
@@ -233,5 +233,13 @@ if [ "$platform" != "linux32" ] && ([ "$ANDROID" == true ] || [ "$platform" != "
     $make_exec install -j$CPU_CORE_COUNT
     popd
 fi
+
+echo "Building libepee..."
+pushd $MONERO_DIR/build/release/contrib/epee/src
+# no need to make, it was already built as dependency for libwallet
+# make -j$CPU_CORE_COUNT
+$make_exec install -j$CPU_CORE_COUNT
+popd
+
 
 popd
