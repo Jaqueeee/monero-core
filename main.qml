@@ -58,14 +58,14 @@ ApplicationWindow {
     property bool isNewWallet: false
     property int restoreHeight:0
     property bool daemonSynced: false
-    property int maxWindowHeight: 1499 // (Screen.height < 900)? 720 : 800;
+    property int maxWindowHeight: (Screen.height < 900)? 720 : 800;
     property bool daemonRunning: false
     property alias toolTip: toolTip
     property string walletName
     property bool viewOnly: false
     property bool foundNewBlock: false
     property int timeToUnlock: 0
-    property var isMobile: (appWindow.width > 600) ? false : true
+    property var isMobile: (appWindow.width > 700) ? false : true
 
     // true if wallet ever synchronized
     property bool walletInitialized : false
@@ -198,7 +198,7 @@ ApplicationWindow {
         }  else {
             var wallet_path = walletPath();
             // console.log("opening wallet at: ", wallet_path, "with password: ", appWindow.password);
-            console.log("opening wallet at: ", wallet_path, ", testnet: ", persistentSettings.testnet);
+//            console.log("opening wallet at: ", wallet_path, ", testnet: ", persistentSettings.testnet);
             walletManager.openWalletAsync(wallet_path, appWindow.password,
                                               persistentSettings.testnet);
         }
@@ -221,7 +221,12 @@ ApplicationWindow {
             middlePanel.checkPaymentClicked.disconnect(handleCheckPayment);
         }
         currentWallet = undefined;
-        walletManager.closeWalletAsync();
+        //
+//        if(isIOS)
+            walletManager.closeWallet();
+//        else
+//            walletManager.closeWalletAsync();
+
     }
 
     function connectWallet(wallet) {
@@ -423,8 +428,8 @@ ApplicationWindow {
     }
 
     function walletsFound() {
-        if(isIos)
-            return false;
+//        if(isIos)
+//            return false;
         if (persistentSettings.wallet_path.length > 0) {
             return walletManager.walletExists(persistentSettings.wallet_path);
         }
@@ -895,11 +900,11 @@ ApplicationWindow {
                 PropertyChanges { target: middlePanel; visible: false }
                 PropertyChanges { target: titleBar; basicButtonVisible: true }
                 PropertyChanges { target: wizard; visible: true }
-                PropertyChanges { target: appWindow; width: 400; }
-                PropertyChanges { target: appWindow; height: 595; }
-                PropertyChanges { target: resizeArea; visible: true }
+                PropertyChanges { target: appWindow; width: Screen.width < 600 ? Screen.width : 930; }
+                PropertyChanges { target: appWindow; height: Screen.width < 600 ? Screen.height : 595; }
+                PropertyChanges { target: resizeArea; visible: false }
                 PropertyChanges { target: titleBar; maximizeButtonVisible: false }
-                PropertyChanges { target: frameArea; blocked: false }
+                PropertyChanges { target: frameArea; blocked: true }
                 PropertyChanges { target: titleBar; visible: false }
                 PropertyChanges { target: titleBar; y: 0 }
                 PropertyChanges { target: titleBar; title: qsTr("Program setup wizard") + translationManager.emptyString }
@@ -1000,20 +1005,20 @@ ApplicationWindow {
                 properties: "visible"
                 value: true
             }
-            NumberAnimation {
-                target: appWindow
-                properties: "height"
-                to: 1499
-                easing.type: Easing.InCubic
-                duration: 1
-            }
-            NumberAnimation {
-                target: appWindow
-                properties: "width"
-                to: (Screen.width < 470)? Screen.width : 470
-                easing.type: Easing.InCubic
-                duration: 1
-            }
+//            NumberAnimation {
+//                target: appWindow
+//                properties: "height"
+//                to: 600
+//                easing.type: Easing.InCubic
+//                duration: 1
+//            }
+//            NumberAnimation {
+//                target: appWindow
+//                properties: "width"
+//                to: 326//(Screen.width < 470)? Screen.width : 470
+//                easing.type: Easing.InCubic
+//                duration: 1
+//            }
             PropertyAction {
                 targets: [leftPanel, rightPanel]
                 properties: "visible"
@@ -1042,13 +1047,13 @@ ApplicationWindow {
 
         SequentialAnimation {
             id: goToProAnimation
-            NumberAnimation {
-                target: appWindow
-                properties: "height"
-                to: 30
-                easing.type: Easing.InCubic
-                duration: 200
-            }
+//            NumberAnimation {
+//                target: appWindow
+//                properties: "height"
+//                to: 30
+//                easing.type: Easing.InCubic
+//                duration: 200
+//            }
             PropertyAction {
                 target: middlePanel
                 properties: "basicMode"
@@ -1059,20 +1064,20 @@ ApplicationWindow {
                 properties: "visible"
                 value: true
             }
-            NumberAnimation {
-                target: appWindow
-                properties: "width"
-                to: rightPanelExpanded ? 1269 : 1269 - 300
-                easing.type: Easing.InCubic
-                duration: 200
-            }
-            NumberAnimation {
-                target: appWindow
-                properties: "height"
-                to: maxWindowHeight
-                easing.type: Easing.InCubic
-                duration: 200
-            }
+//            NumberAnimation {
+//                target: appWindow
+//                properties: "width"
+//                to: rightPanelExpanded ? 1269 : 1269 - 300
+//                easing.type: Easing.InCubic
+//                duration: 200
+//            }
+//            NumberAnimation {
+//                target: appWindow
+//                properties: "height"
+//                to: maxWindowHeight
+//                easing.type: Easing.InCubic
+//                duration: 200
+//            }
             PropertyAction {
                 target: frameArea
                 properties: "blocked"
@@ -1098,8 +1103,8 @@ ApplicationWindow {
             }
         }
 
-        property int minWidth: 320 //leftPanel.width + 655 + rightPanel.width
-        property int minHeight: 1620
+        property int minWidth: 326 //leftPanel.width + 655 + rightPanel.width
+        property int minHeight: 500
         MouseArea {
             id: resizeArea
             hoverEnabled: true
@@ -1213,7 +1218,7 @@ ApplicationWindow {
     }
     onClosing: {
         // Close wallet non async on exit
-        walletManager.closeWallet();
+        closeWallet();
         // Stop daemon and pool miner
 //        daemonManager.stop();
     }
